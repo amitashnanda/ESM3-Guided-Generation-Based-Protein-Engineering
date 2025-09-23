@@ -196,7 +196,8 @@ This project is licensed under the [Apache License](LICENSE).
 4. **National Energy Research Scientific Computing Center**
 5. **ai4protein group**
 6. **University of California San Diego (Boolean Lab)**
-7. **ESM Github (Code / Weights)**
+7. **Anna Su (Yale University)**
+8. **ESM Github (Code / Weights)**
     ```@software{evolutionaryscale_2024,
     author = {{EvolutionaryScale Team}},
     title = {evolutionaryscale/esm},
