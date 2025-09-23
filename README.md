@@ -13,7 +13,7 @@ This repository contains a Python-based framework for computational protein desi
 
 The primary goal of this tool is to take a wild-type protein structure and redesign a user-defined portion of its sequence to discover novel variants with enhanced stability ($ΔΔG$). The code is customizable to include other protein properties in the guided-generation custom-scoring function. 
 
-![](results/overview.png)
+![](results/workflow.svg)
 
 
 
