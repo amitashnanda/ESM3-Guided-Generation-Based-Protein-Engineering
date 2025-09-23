@@ -1,1 +1,5 @@
-foldx/
+# Ignore the FoldX binary (the * makes it match any version)
+foldx/foldx*
+
+# Ignore the rotabase file
+foldx/rotabase.txt
