@@ -127,7 +127,16 @@ This project relies on several key pieces of software.
       ```bash
       huggingface-cli login
       ```
+    * To access larger ESM model:
 
+        ```bash
+        from getpass import getpass
+
+        from esm.sdk import client
+
+        token = getpass("Token from Forge console: ")
+        model = client(model="esm3-medium-2024-08", url="https://forge.evolutionaryscale.ai", token=token)
+        ```
 2.  **Create the Conda Environment:**
     You can recreate the necessary Conda environment using the provided file. This will install all the required Python packages.
     ```bash
@@ -180,16 +189,38 @@ This project is licensed under the [Apache License](LICENSE).
 
 ## **Acknowledgments**
 
-This is a summer internship at NERSC from June 2025 to September 2025
+**This is a summer internship work at NERSC from June 2025 to September 2025.**
 
 1. **Perlmutter Supercomputer**
 3. **Lawrence Berkeley National Laboratory**
 4. **National Energy Research Scientific Computing Center**
 5. **ai4protein group**
 6. **University of California San Diego (Boolean Lab)**
+7. **ESM Github (Code / Weights)**
+    ```@software{evolutionaryscale_2024,
+    author = {{EvolutionaryScale Team}},
+    title = {evolutionaryscale/esm},
+    year = {2024},
+    publisher = {Zenodo},
+    doi = {10.5281/zenodo.14219303},
+    URL = {https://doi.org/10.5281/zenodo.14219303}}
+    ```
 
 
+## **Citation**
 
+If you use this work in your research, please cite it as follows:
+
+```bibtex
+@software{Nanda_esm_foldx_guidedgeneration_2025,
+  author = {Amitash Nanda, Steven Farrell, Nabin Giri },
+  title = {{ESM-FoldX Guided Generation: A Framework for Protein Understanding and Design Using Guided Generation}},
+  year = {2025},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  url = {https://github.com/amitashnanda/ESM3-Guided-Generation-Based-Protein-Engineering}
+}
+```
 
 
 
