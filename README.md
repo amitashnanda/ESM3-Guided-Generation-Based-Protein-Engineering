@@ -160,7 +160,7 @@ pip install -e .
 The main script can be run from the command line. You must provide a PDB filename, chain ID, and masking percentage.
 
 ```bash
-python src/original_source_files/main.py --pdb_filename "1fbm.pdb" --chain_id "A" --masking_percentage 0.4 --num_decoding_steps 32 --num_samples_per_step 20 --num_workers 20
+python src/original_source_files/main.py --pdb_filename "1PGA.pdb" --chain_id "A" --masking_percentage 0.4 --num_decoding_steps 32 --num_samples_per_step 20 --num_workers 20
 ```
 1. Change the `masking_percentage` based on the protein residue, if the residue is larger try to give a smaller `masking_percentage`, for smaller residue `0.4-0.5` works perfect. For the `num_decoding_steps` and `num_samples_per_step` give the value based on the no of iterations desired for the optimization process. `num_workers` value will be same as `num_samples_per_step` for performing simultaneous `foldx` call in parallel. 
 
@@ -176,7 +176,7 @@ Make sure to change the `#SBATCH --array=0-1` for the number of pdb file submitt
 To run after installing the package:
 
 ```bash
-esm_foldx_guidedgeneration --pdb_filename "1fbm.pdb" --chain_id "A" --masking_percentage 0.4 --num_decoding_steps 32 --num_samples_per_step 20 --num_workers 20
+esm_foldx_guidedgeneration --pdb_filename "1PGA.pdb" --chain_id "A" --masking_percentage 0.4 --num_decoding_steps 32 --num_samples_per_step 20 --num_workers 20
 ```
 Make sure to create the foldx directory and add the necessary pdb files, place the `foldx` executable and the `rotabase.txt` file inside this `foldx` directory.
  
