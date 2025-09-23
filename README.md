@@ -43,20 +43,12 @@ ESM3-Guided-Generation-Based-Protein-Engineering
 │    │      └───PDB_analysis.ipynb
 │    │      └───plot.ipynb
 │    │  
-│    └───esm_foldx_guidedgeneration            <- this folder is used to create a PyPI package      
-│    │      │ 
-│    │      └───guided_generation.py           <- derivative-free guided generation, parallel foldx run
-│    │      └───main.py                        <- main python file 
-│    │      └───scoring_utils.py               <- pdb parsing, foldx call, foldx scorer
-│    │      └───guided_generation.sh           <- sample batch script to run on an HPC cluster using Slurm
-│    │
-│    │       
-│    └───original_source_files                 <- use this folder for local run
+│    └───esm_foldx_guidedgeneration                  
 │           │ 
-│           └───guided_generation.py           <- derivative-free guided generation, parallel foldx run
-│           └───main.py                        <- main python file 
-│           └───scoring_utils.py               <- pdb parsing, foldx call, foldx scorer
-│           └───guided_generation.sh           <- sample batch script to run on an HPC cluster using Slurm
+│           └───guided_generation.py            <- derivative-free guided generation, parallel foldx run
+│           └───main.py                         <- main python file 
+│           └───scoring_utils.py                <- pdb parsing, foldx call, foldx scorer
+│           └───guided_generation.sh            <- sample batch script to run on an HPC cluster using Slurm
 │     
 └───.gitignore
 └───environment.yml
