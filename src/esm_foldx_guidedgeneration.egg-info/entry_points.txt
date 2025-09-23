@@ -1,0 +1,2 @@
+[console_scripts]
+esm_foldx_guidedgeneration = esm_foldx_guidedgeneration.main:main

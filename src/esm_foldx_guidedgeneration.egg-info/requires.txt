@@ -1,0 +1,8 @@
+torch
+pandas
+seaborn
+matplotlib
+esm
+biopython
+huggingface-hub
+tqdm

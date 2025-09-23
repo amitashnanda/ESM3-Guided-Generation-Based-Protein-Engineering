@@ -1,0 +1,2015 @@
+=================================================================
+ESM3-FoldX Guided Generation Log
+Run Timestamp: 20250828_223530
+=================================================================
+
+--- RUN PARAMETERS ---
+PDB File: 1PGA.pdb
+Masking Percentage: 50.0%
+Decoding Steps: 16
+Samples per Step: 20
+
+--- SEQUENCE SETUP ---
+Original Wild-Type Sequence:
+MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGVDGEWTYDDATKTFTVTE
+
+Masked Template for Generation (28 masks):
+_TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T____T__F__TE
+=================================================================
+
+--- Step 1 Partial Sequences ---
+[Candidate 1] Partial Sequence: _TYKLIL_GK_LKKET_T___D___AE_V_K__A_D_GV_G__T____T__F__TE
+[Candidate 2] Partial Sequence: _TYKLIL_GK_LKYET_T___D___AE_V_K__A_D_GV_G__T____T__F__TE
+[Candidate 3] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T____T__FC_TE
+[Candidate 4] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T____T__FR_TE
+[Candidate 5] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T____TY_F__TE
+[Candidate 6] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 7] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T____TS_F__TE
+[Candidate 8] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T____T_TF__TE
+[Candidate 9] Partial Sequence: _TYKLIL_GK_LK_ET_TT__D___AE_V_K__A_D_GV_G__T____T__F__TE
+[Candidate 10] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T____T_DF__TE
+[Candidate 11] Partial Sequence: _TYKLIL_GK_LK_ET_T__ND___AE_V_K__A_D_GV_G__T____T__F__TE
+[Candidate 12] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__ARD_GV_G__T____T__F__TE
+[Candidate 13] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___ET__F__TE
+[Candidate 14] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___RT__F__TE
+[Candidate 15] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G_AT____T__F__TE
+[Candidate 16] Partial Sequence: _TYKLIL_GK_LK_ET_T___DR__AE_V_K__A_D_GV_G__T____T__F__TE
+[Candidate 17] Partial Sequence: _TYKLIL_GK_LK_ETVT___D___AE_V_K__A_D_GV_G__T____T__F__TE
+[Candidate 18] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___YT__F__TE
+[Candidate 19] Partial Sequence: _TYKLIL_GK_LKVET_T___D___AE_V_K__A_D_GV_G__T____T__F__TE
+[Candidate 20] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T____T_DF__TE
+
+--- Step 1 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: MTYKLILTGKDLKKETITVETDKEEAEAVAKKLAKDLGVTGTVTVDGGTVTFEKTE
+  pTM: 0.4278
+  Score: -23.0685 | ddG: 23.069 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: MTYKLILTGKDLKYETETEEDDKEEAEAVAKKLAKDLGVTGTVTVDGGTVTFEETE
+  pTM: 0.4188
+  Score: -23.7799 | ddG: 23.780 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: MTYKLILTGKDLKTETVTELADKEEAEAVAKKLAKDLGVTGTVTVEGGTVEFCETE
+  pTM: 0.4496
+  Score: -22.4498 | ddG: 22.450 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: MTYKLILTGKDLKTETVTGEADEAEAEAVAKALAKDLGVSGTVTVDGGTVTFRVTE
+  pTM: 0.4375
+  Score: -18.5903 | ddG: 18.590 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: MTYKLILNGKELKTETVTEETDEEEAEAVAKALAKDLGVSGTVTVGGVTYTFEKTE
+  pTM: 0.2957
+  Score: -20.3003 | ddG: 20.300 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: MTYKLILTGKELKTETVTVETDKAEAEAVAKKLAKDLGVTGTVTVDGSTGTFEVTE
+  pTM: 0.3769
+  Score: -16.8276 | ddG: 16.828 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: MTYKLILTGKVLKGETVTVETDEEEAEAVAKKLAKDLGVTGTVTVEEVTSEFEVTE
+  pTM: 0.3577
+  Score: -17.3965 | ddG: 17.396 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: MTYKLILTGKELKTETVTGETDEAEAEAVAKALAKDLGVTGTVTVDGGTVTFEKTE
+  pTM: 0.3906
+  Score: -26.4302 | ddG: 26.430 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: MTYKLILNGKELKGETVTTFADKAEAEAVAKKLAKDLGVTGTVTVDGGTVTFEKTE
+  pTM: 0.4434
+  Score: -17.9981 | ddG: 17.998 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: MTYKLILTGKVLKGETVTVEDDEEEAEAVAKKLAEDLGVTGTVTVEGETVDFEVTE
+  pTM: 0.3846
+  Score: -21.8141 | ddG: 21.814 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: MTYKLILTGKELKTETVTVENDEEAAEAVAKALAKDLGVTGTVTVDGGTVTFEKTE
+  pTM: 0.3283
+  Score: -23.3289 | ddG: 23.329 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: MTYKLILTGKDLKTETVTEFGDKEEAEAVAKELARDLGVSGTVTVDGGTVTFEETE
+  pTM: 0.4488
+  Score: -25.2510 | ddG: 25.251 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: MTYKLILTGKDLKEETVTEEEDKEEAEAVAKELAEDLGVSGTVTVDGETVEFEVTE
+  pTM: 0.4689
+  Score: -22.2119 | ddG: 22.212 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: MTYKLILTGKDLKTETVTGFADEAEAEAVAKALAKDLGVSGTVTVGGRTVTFEVTE
+  pTM: 0.4578
+  Score: -23.5345 | ddG: 23.535 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: MTYKLILTGKELKTETVTVEADKAEAEAVAKALAKDLGVTGTATVDGGTVTFEVTE
+  pTM: 0.3710
+  Score: -20.8330 | ddG: 20.833 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: MTYKLILTGKDLKTETVTGFADREEAEAVAKKLAKDLGVTGTVTVDGGTVTFEETE
+  pTM: 0.4691
+  Score: -25.8508 | ddG: 25.851 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: MTYKLILTGKELKGETVTVETDEETAEAVAKALAEDLGVTGTVTVDGGTVTFEETE
+  pTM: 0.3839
+  Score: -22.7904 | ddG: 22.790 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: MTYKLILTGKELKEETVTVETDEEEAEAVAKEIAEDLGVTGTVTDDGYTVTFEETE
+  pTM: 0.3744
+  Score: -29.6208 | ddG: 29.621 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: MTYKLILTGKDLKVETVTEETDEEEAEAVAKALAEDLGVTGTVTVDGGTVTFEETE
+  pTM: 0.4264
+  Score: -26.9469 | ddG: 26.947 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: MTYKLILTGKVLKGETVTVEDDEEEAEAVAKKLAEDLGVTGTVTVEGETVDFEVTE
+  pTM: 0.3846
+  Score: -21.8141 | ddG: 21.814 kcal/mol
+
+--- Step 2 Partial Sequences ---
+[Candidate 1] Partial Sequence: _TYKLIL_GK_LK_ETTT___D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 2] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___ST_TF__TE
+[Candidate 3] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_DVGV_G__T___ST__F__TE
+[Candidate 4] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___ST__FE_TE
+[Candidate 5] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___ST_IF__TE
+[Candidate 6] Partial Sequence: _TYKLIL_GK_LK_ET_T___DL__AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 7] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T_E_ST__F__TE
+[Candidate 8] Partial Sequence: _TYKLIL_GKPLK_ET_T___D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 9] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___ST_PF__TE
+[Candidate 10] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G_VT___ST__F__TE
+[Candidate 11] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K__A_DAGV_G__T___ST__F__TE
+[Candidate 12] Partial Sequence: _TYKLILTGK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 13] Partial Sequence: _TYKLIL_GK_LK_ET_T___D_E_AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 14] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AEKV_K__A_D_GV_G__T___ST__F__TE
+[Candidate 15] Partial Sequence: _TYKLIL_GK_LK_ET_T___D__EAE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 16] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 17] Partial Sequence: _TYKLIL_GK_LK_ET_T___D_D_AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 18] Partial Sequence: MTYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 19] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AEAV_K__A_D_GV_G__T___ST__F__TE
+[Candidate 20] Partial Sequence: _TYKLIL_GK_LK_ET_T___D___AE_V_K_RA_D_GV_G__T___ST__F__TE
+
+--- Step 2 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: MTYKLILTGKGLKIETTTEAADKAEAEAVAKKLAKDLGVTGTVTVDGSTGTFEETE
+  pTM: 0.4813
+  Score: -19.1447 | ddG: 19.145 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: MTYKLILNGKELKTETVTVETDKAEAEAVAKKLAKDLGVTGTVTVDGSTVTFEVTE
+  pTM: 0.3458
+  Score: -18.3054 | ddG: 18.305 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: MTYKLILNGKELKGETVTVETDEATAEAVAKALAKDVGVTGTVTVDGSTGTFEVTE
+  pTM: 0.3323
+  Score: -15.6762 | ddG: 15.676 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: MTYKLILNGKELKGETVTVEDDEEEAEAVAKKLAEDLGVTGTVTVDGSTGTFEVTE
+  pTM: 0.3731
+  Score: -15.5434 | ddG: 15.543 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: MTYKLILTGKDLKTETITVETDKEEAEAVAKKIAKDLGVTGTVTDDGSTVIFEETE
+  pTM: 0.4369
+  Score: -24.8359 | ddG: 24.836 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: MTYKLILNGKDLKTETVTGEDDLEEAEAVAKKLAKDLGVTGTVTVDGSTGTFEETE
+  pTM: 0.4613
+  Score: -19.9589 | ddG: 19.959 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: MTYKLILTGKDLKTETVTVEDDKEEAEAVAKKLAEDLGVTGTVTVEGSTGTFEETE
+  pTM: 0.4131
+  Score: -22.3549 | ddG: 22.355 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: MTYKLILNGKPLKGETVTVEADKAEAEAVAKALAKDLGVTGTVTVDGSTGTFEVTE
+  pTM: 0.3646
+  Score: -14.6340 | ddG: 14.634 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: MTYKLILTGKDLKGETVTVEADKATAEAVAKALAKDLGVTGTVTVEGSTEPFTVTE
+  pTM: 0.3914
+  Score: -20.0486 | ddG: 20.049 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: MTYKLILTGKDLKTETVTGLADKAEAEAVAKKLAKDLGVSGTVTVDGSTVTFEVTE
+  pTM: 0.4726
+  Score: -17.3629 | ddG: 17.363 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: MTYKLILNGKELKTETVTVEADKAEAEAVAKKLAKDAGVTGTVTVDGSTGTFEVTE
+  pTM: 0.3791
+  Score: -16.6768 | ddG: 16.677 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: MTYKLILTGKDLKGETVTEFADKEEAEAVAKKLAEDLGVTGTVTVDGSTGTFEVTE
+  pTM: 0.4188
+  Score: -16.9304 | ddG: 16.930 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: MTYKLILTGKELKEETVTVETDKEEAEAVAKELAEDLGVTGTVTVDGSTGTFEETE
+  pTM: 0.4107
+  Score: -23.3763 | ddG: 23.376 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: MTYKLILTGKDLKTETITGEKDKEEAEKVAKELAKDLGVTGTVTVDGSTGTFEKTE
+  pTM: 0.4322
+  Score: -20.0072 | ddG: 20.007 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: MTYKLILTGKDLKTETITEFKDKEEAEKVAKEIAEDLGVTGTVTVDGSTGEFEETE
+  pTM: 0.4485
+  Score: -25.9734 | ddG: 25.973 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILNGKELKTETVTGAADKATAEAVAKKLAKDLGVTGTVTYDASTGTFTITE
+  pTM: 0.5564
+  Score: -12.8840 | ddG: 12.884 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: MTYKLILTGKDLKTETVTVEDDKDEAEAVAKKLAEDLGVTGTVTVDGSTGTFEVTE
+  pTM: 0.4223
+  Score: -18.7399 | ddG: 18.740 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: MTYKLILTGKDLKTETVTGEADKAEAEAVAKKLAKDLGVTGTVTVDGSTGTFEVTE
+  pTM: 0.4214
+  Score: -17.0897 | ddG: 17.090 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: MTYKLILTGKDLKTETVTVEADKAEAEAVAKKLAKDLGVTGTVTVDGSTGTFEVTE
+  pTM: 0.3795
+  Score: -16.3623 | ddG: 16.362 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: MTYKLILTGKGLKTETITGFGDKAEAEAVAKKRAKDLGVTGTVTVDGSTGTFEVTE
+  pTM: 0.4176
+  Score: -21.4589 | ddG: 21.459 kcal/mol
+
+--- Step 3 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_DNGV_G__T___ST__F__TE
+[Candidate 2] Partial Sequence: ATYKLIL_GK_LKTET_T___D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 3] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_DAGV_G__T___ST__F__TE
+[Candidate 4] Partial Sequence: ATYKLIL_GK_LK_ET_T___D_A_AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 5] Partial Sequence: ATYKLIL_GK_LKTET_T___D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 6] Partial Sequence: ATYKLIL_GK_LK_ET_T_V_D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 7] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AEEV_K__A_D_GV_G__T___ST__F__TE
+[Candidate 8] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___ST__F_VTE
+[Candidate 9] Partial Sequence: ATYKLIL_GK_LK_ET_TF__D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 10] Partial Sequence: ATYKLIL_GK_LKEET_T___D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 11] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___ST_TF__TE
+[Candidate 12] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AEEV_K__A_D_GV_G__T___ST__F__TE
+[Candidate 13] Partial Sequence: ATYKLIL_GK_LK_ET_T___DG__AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 14] Partial Sequence: ATYKLIL_GK_LK_ETVT___D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 15] Partial Sequence: ATYKLIL_GK_LK_ET_T___D_N_AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 16] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GVKG__T___ST__F__TE
+[Candidate 17] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GVQG__T___ST__F__TE
+[Candidate 18] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GV_G__T___STE_F__TE
+[Candidate 19] Partial Sequence: ATYKLIL_GK_LK_ET_T_M_D___AE_V_K__A_D_GV_G__T___ST__F__TE
+[Candidate 20] Partial Sequence: ATYKLIL_GK_LKEET_T___D___AE_V_K__A_D_GV_G__T___ST__F__TE
+
+--- Step 3 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILNGKELKTETVTGAADAATAEAVAKKWAKDNGVTGTVTYDASTGTFTITE
+  pTM: 0.5295
+  Score: -13.3158 | ddG: 13.316 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILDGKVLKTETVTVTADKATAEAVAKKLAKDAGVTGTVTVDGSTGTFTVTE
+  pTM: 0.3476
+  Score: -19.5239 | ddG: 19.524 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILNGKELKTETVTGAADAATAEAVAKKLAKDAGVTGKVTYDASTGTFTVTE
+  pTM: 0.5849
+  Score: -15.0805 | ddG: 15.081 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILNGKELKTETVTGAADKATAEAVAKKLAADAGVTGTVTFDGSTGTFTVTE
+  pTM: 0.4950
+  Score: -15.1457 | ddG: 15.146 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILDGKVLKTETVTVTADKATAEAVAKKLAKDAGVTGTVTVDGSTGTFTVTE
+  pTM: 0.3476
+  Score: -19.5239 | ddG: 19.524 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILNGKELKTETVTGVTDAAAAEAVAKKLAKDAGVTGTVTYDGSTGTFTVTE
+  pTM: 0.5090
+  Score: -17.3810 | ddG: 17.381 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILNGKELKTETVTGLADKKTAEEVAKKLAKDLGVTGTVTLDGSTGTFTVTE
+  pTM: 0.4707
+  Score: -15.6530 | ddG: 15.653 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILNGKELKTETVTVTADKATAEAVAKKLAADAGVTGTVTYDGSTGTFTVTE
+  pTM: 0.4447
+  Score: -16.9632 | ddG: 16.963 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILNGKELKTETVTFTGDKATAEAVAKKLAKDLGVTGTVTYDGSTKTFTITE
+  pTM: 0.5073
+  Score: -12.9060 | ddG: 12.906 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILNGKVLKEETVTVTADKATAEAVAKKLAKDAGVTGTVTYDGSTGTFTITE
+  pTM: 0.4724
+  Score: -14.6834 | ddG: 14.683 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILNGKELKTETVTVPADAATAEAVAKKLAKDAGVTGTVTYDASTKTFTITE
+  pTM: 0.5565
+  Score: -16.9727 | ddG: 16.973 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILNGKELKTETVTGLADKKTAEEVAKKLAKDLGVTGTVTLDGSTGTFTVTE
+  pTM: 0.4707
+  Score: -15.6530 | ddG: 15.653 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILDGKELKTETVTVTADGKTAEVVVKVTAGDGGVTGTVTVDGSTVTFTVTE
+  pTM: 0.2071
+  Score: -28.4152 | ddG: 28.415 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILNGKELKTETVTVTADKATAEAVAKKLAKDLGVTGTVTYDGSTGTFTVTE
+  pTM: 0.5411
+  Score: -15.9824 | ddG: 15.982 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILNGKELKTETVTVTADANTAEAVAKKLAKDLGVTGTVTYDGSTGTFTITE
+  pTM: 0.5011
+  Score: -14.6811 | ddG: 14.681 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILNGKELKTETVTGAADKKTAEAVAKKWAKDKGVKGKVTVDASTKTFTITE
+  pTM: 0.5838
+  Score: -12.3068 | ddG: 12.307 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILNGKELKTETVTGAADKATAEAVAKKLAKDLGVQGTVTYDGSTGTFTVTE
+  pTM: 0.5063
+  Score: -13.2785 | ddG: 13.278 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILDGKELKTETVTVAADKATAEAVAKKLAKDLGVTGTVTVTVSTETFTVTE
+  pTM: 0.3165
+  Score: -15.5205 | ddG: 15.521 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILDGKELKTETVTGMTDAATAEAVAKKLAKDLGVTGTVTVDGSTGTFTVTE
+  pTM: 0.3896
+  Score: -17.0645 | ddG: 17.064 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILNGKVLKEETVTVTADKATAEAVAKKLAKDAGVTGTVTYDGSTGTFTITE
+  pTM: 0.4724
+  Score: -14.6834 | ddG: 14.683 kcal/mol
+
+--- Step 4 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GVKG__T___ST__FN_TE
+[Candidate 2] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GVKG__TV__ST__F__TE
+[Candidate 3] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AEKV_K__A_D_GVKG__T___ST__F__TE
+[Candidate 4] Partial Sequence: ATYKLIL_GKLLK_ET_T___D___AE_V_K__A_D_GVKG__T___ST__F__TE
+[Candidate 5] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K_FA_D_GVKG__T___ST__F__TE
+[Candidate 6] Partial Sequence: ATYKLIL_GK_LK_ET_T__FD___AE_V_K__A_D_GVKG__T___ST__F__TE
+[Candidate 7] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GVKG__T___STE_F__TE
+[Candidate 8] Partial Sequence: ATYKLIL_GK_LK_ET_T___D__QAE_V_K__A_D_GVKG__T___ST__F__TE
+[Candidate 9] Partial Sequence: ATYKLIL_GK_LK_ET_T_D_D___AE_V_K__A_D_GVKG__T___ST__F__TE
+[Candidate 10] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__AAD_GVKG__T___ST__F__TE
+[Candidate 11] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K_EA_D_GVKG__T___ST__F__TE
+[Candidate 12] Partial Sequence: ATYKLIL_GK_LK_ET_T___DG__AE_V_K__A_D_GVKG__T___ST__F__TE
+[Candidate 13] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K_WA_D_GVKG__T___ST__F__TE
+[Candidate 14] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GVKG__T__LST__F__TE
+[Candidate 15] Partial Sequence: ATYKLIL_GK_LKTET_T___D___AE_V_K__A_D_GVKG__T___ST__F__TE
+[Candidate 16] Partial Sequence: ATYKLIL_GK_LK_ET_T___D__DAE_V_K__A_D_GVKG__T___ST__F__TE
+[Candidate 17] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__AED_GVKG__T___ST__F__TE
+[Candidate 18] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_KH_A_D_GVKG__T___ST__F__TE
+[Candidate 19] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AEKV_K__A_D_GVKG__T___ST__F__TE
+[Candidate 20] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GVKG__T__SST__F__TE
+
+--- Step 4 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILNGKELKTETVTGAKDKKTAEAVAKKWAKDKGVKGKVTYDASTKTFNITE
+  pTM: 0.5999
+  Score: -9.1337 | ddG: 9.134 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILNGKELKTETVTGAKDKATAEAVAKKLAKDKGVKGKVTVDLSTGTFTITE
+  pTM: 0.6097
+  Score: -11.9383 | ddG: 11.938 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILNGKELKTETVTGAKDKAEAEKVAKKLAKDKGVKGKVTYDGSTGTFTITE
+  pTM: 0.5284
+  Score: -12.7349 | ddG: 12.735 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILNGKLLKEETVTVPADKKTAEAVAKKLAKDAGVKGTVTYDGSTGTFTITE
+  pTM: 0.5875
+  Score: -15.8848 | ddG: 15.885 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILNGKELKTETVTGAKDKATAEAVAKKFAKDNGVKGKVTYDGSTKTFTITE
+  pTM: 0.5064
+  Score: -10.5125 | ddG: 10.512 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILDGKTLKGETVTVTFDGATAEAVAKALAKDLGVKGTVTVDGSTVTFTVTE
+  pTM: 0.2858
+  Score: -18.0658 | ddG: 18.066 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILDGKELKTETVTGAADKAAAEAVAKKLAKDLGVKGKVTVEVSTETFTVTE
+  pTM: 0.4156
+  Score: -16.0207 | ddG: 16.021 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILNGKELKTETVTGVKDKAQAEAVAKKLAKDLGVKGKVTFDGSTGTFTVTE
+  pTM: 0.4907
+  Score: -12.7495 | ddG: 12.749 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILNGKELKTETVTVDADKATAEAVAKKLAKDLGVKGTVTYDGSTGTFTITE
+  pTM: 0.3814
+  Score: -12.1242 | ddG: 12.124 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILNGKELKTETVTAAADKATAEAVAKKLAADLGVKGTVTVDASTKTFTITE
+  pTM: 0.6111
+  Score: -12.6620 | ddG: 12.662 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILDGKTLKVETTTKGGDGKKAETVLKLEATDKGVKGTVTVGGSTVTFELTE
+  pTM: 0.4367
+  Score: -22.3123 | ddG: 22.312 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILDGKELKGETVTVTADGKTAEVVLKATAGDAGVKGTVTVDGSTVTFTVTE
+  pTM: 0.1939
+  Score: -21.6341 | ddG: 21.634 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILNGKELKTETVTGAKDKAEAEKVAKKWAKDNGVKGTVTYDGSTGTFTVTE
+  pTM: 0.5019
+  Score: -13.3227 | ddG: 13.323 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILDGKELKTETVTVKADKATAEAVAKKLAKDLGVKGKVTVDLSTGTFTVTE
+  pTM: 0.4832
+  Score: -14.2240 | ddG: 14.224 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILNGKELKTETVTLPADKKTAEAVAKKLAKDAGVKGTVTYDGSTGTFTITE
+  pTM: 0.5109
+  Score: -16.6349 | ddG: 16.635 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILNGKELKTETVTGKKDKKDAEAVAKKLAKDLGVKGKVTYDGSTGTFTVTE
+  pTM: 0.4668
+  Score: -13.2248 | ddG: 13.225 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILDGKGLKGETVTVTVDGKTAEAVAKKLAEDLGVKGTVTVDGSTITFTITE
+  pTM: 0.3338
+  Score: -19.3080 | ddG: 19.308 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILNGKELKTETVTVDADKKTAEAVAKHWAKDLGVKGKVTVDPSTKTFTITE
+  pTM: 0.5870
+  Score: -11.4800 | ddG: 11.480 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILNGKELKTETVTGAKDKAEAEKVAKKLAKDKGVKGKVTYDGSTGTFTITE
+  pTM: 0.5284
+  Score: -12.7349 | ddG: 12.735 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILNGKELKTETVTVPADKKTAEAVAKKWAKDLGVKGKVTYDSSTKTFTITE
+  pTM: 0.5996
+  Score: -15.5072 | ddG: 15.507 kcal/mol
+
+--- Step 5 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLIL_GK_LK_ET_T__ND___AE_V_K__A_D_GVKG_YT___ST__FN_TE
+[Candidate 2] Partial Sequence: ATYKLIL_GK_LK_ET_T__ADK__AE_V_K__A_D_GVKG__T___ST__FN_TE
+[Candidate 3] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K_LA_D_GVKG__T__VST__FN_TE
+[Candidate 4] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__AND_GVKG__T___STK_FN_TE
+[Candidate 5] Partial Sequence: ATYKLIL_GK_LK_ET_T___D__EAE_VQK__A_D_GVKG__T___ST__FN_TE
+[Candidate 6] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AEAV_K_WA_D_GVKG__T___ST__FN_TE
+[Candidate 7] Partial Sequence: ATYKLIL_GK_LKEET_T___D___AE_V_K__A_D_GVKGE_T___ST__FN_TE
+[Candidate 8] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_VLK__A_D_GVKG__T__QST__FN_TE
+[Candidate 9] Partial Sequence: ATYKLILDGK_LK_ET_T_I_D___AE_V_K__A_D_GVKG__T___ST__FN_TE
+[Candidate 10] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K__A_D_GVKG__T__KST__FNRTE
+[Candidate 11] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AE_V_K_MA_D_GVKG__T___STS_FN_TE
+[Candidate 12] Partial Sequence: ATYKLIL_GK_LK_ET_T___D__NAE_V_K__A_DQGVKG__T___ST__FN_TE
+[Candidate 13] Partial Sequence: ATYKLIL_GK_LKTET_T___D___AE_V_K__A_D_GVKG__T__SST__FN_TE
+[Candidate 14] Partial Sequence: ATYKLIL_GK_LK_ET_T__TD___AE_V_K__A_D_GVKG__T__AST__FN_TE
+[Candidate 15] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_V_K__A_D_GVKG__T___ST__FN_TE
+[Candidate 16] Partial Sequence: ATYKLIL_GK_LKSET_T___D___AE_V_K_WA_D_GVKG__T___ST__FN_TE
+[Candidate 17] Partial Sequence: ATYKLIL_GK_LK_ET_T__ND___AE_V_K__A_DAGVKG__T___ST__FN_TE
+[Candidate 18] Partial Sequence: ATYKLIL_GK_LK_ET_T_L_D___AE_V_K__A_D_GVKGK_T___ST__FN_TE
+[Candidate 19] Partial Sequence: ATYKLIL_GK_LK_ET_T___D___AEKV_K__A_D_GVKG_VT___ST__FN_TE
+[Candidate 20] Partial Sequence: ATYKLILGGK_LK_ET_T___D___AE_V_K__A_D_GVKG__T__PST__FN_TE
+
+--- Step 5 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILNGKELKTETVTVANDKKTAEAVAKKLAKDLGVKGTYTVDGSTITFNITE
+  pTM: 0.4327
+  Score: -15.8279 | ddG: 15.828 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILNGKELKTETVTGPADKAAAEAVAKKLAKDKGVKGTVTYDGSTGTFNVTE
+  pTM: 0.5250
+  Score: -17.9482 | ddG: 17.948 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILDGKELKTETVTGLKDKKTAEAVAKKLAKDLGVKGKVTVTVSTVTFNVTE
+  pTM: 0.3997
+  Score: -17.8900 | ddG: 17.890 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILNGKELKTETVTVKKDKKKAEKVAKKLANDLGVKGTVTYDGSTKTFNITE
+  pTM: 0.4741
+  Score: -10.6702 | ddG: 10.670 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILNGKELKTETVTVTLDKTEAEAVQKLLAKDLGVKGTVTVDGSTGTFNVTE
+  pTM: 0.3146
+  Score: -15.0711 | ddG: 15.071 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILDGKELKTETVTGAKDKAAAEAVAKKWAKDNGVKGTVTVDGSTGTFNVTE
+  pTM: 0.4650
+  Score: -15.2474 | ddG: 15.247 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILNGKVLKEETVTVTLDKKTAEEVAKKLAKDLGVKGEVTVDGSTITFNITE
+  pTM: 0.4290
+  Score: -18.2548 | ddG: 18.255 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILDGKTLKVETVTLTADKKKAEAVLKKLAKDLGVKGTVTVDQSTITFNVTE
+  pTM: 0.2817
+  Score: -13.7732 | ddG: 13.773 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILDGKELKTETVTVITDKKKAEAVLKKLAKDLGVKGTVTVDGSTITFNVTE
+  pTM: 0.2483
+  Score: -16.9034 | ddG: 16.903 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILDGKELKTETVTVKADKKTAEAVAKKLAKDLGVKGTVTVDKSTITFNRTE
+  pTM: 0.4243
+  Score: -17.9300 | ddG: 17.930 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILDGKELKTETVTGLKDKKEAEAVAKKMAKDLGVKGTVTVTGSTSTFNVTE
+  pTM: 0.4203
+  Score: -16.2784 | ddG: 16.278 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILNGKELKTETVTVTADAKNAEAVAKKWAKDQGVKGTVTYDGSTGTFNVTE
+  pTM: 0.4860
+  Score: -15.2412 | ddG: 15.241 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILDGKVLKTETVTVTADGKTAEAVAKALAKDLGVKGTVTVTSSTVTFNVTE
+  pTM: 0.2477
+  Score: -21.6932 | ddG: 21.693 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILNGKELKTETVTGATDAAKAEAVAKKLAADAGVKGTVTYDASTKTFNITE
+  pTM: 0.5651
+  Score: -13.3778 | ddG: 13.378 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILNGKELKTETITAAKDKAEAEAVAKKKAKDKGVKGKVTFDASTKTFNITE
+  pTM: 0.6240
+  Score: -8.9616 | ddG: 8.962 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILNGKELKSETVTGAKDKAEAEKVAKKWAKDNGVKGTITYDGSTGTFNVTE
+  pTM: 0.5118
+  Score: -12.8145 | ddG: 12.815 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILNGKELKTETVTVANDKATAEAVAKKLAKDAGVKGKVTYDASTKTFNITE
+  pTM: 0.6293
+  Score: -13.3318 | ddG: 13.332 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILDGKELKGETVTKLKDGKTAEAVAKKLAKDLGVKGKVTVDGSTITFNITE
+  pTM: 0.2943
+  Score: -15.3940 | ddG: 15.394 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILNGKELKTETVTGVKDKAEAEKVAKKLAKDKGVKGKVTYDGSTKTFNITE
+  pTM: 0.5794
+  Score: -12.5555 | ddG: 12.556 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILGGKELKTETVTVPADKATAEAVAKKLAKDLGVKGTVTYDPSTKTFNITE
+  pTM: 0.5250
+  Score: -12.9173 | ddG: 12.917 kcal/mol
+
+--- Step 6 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLIL_GKDLK_ETIT_A_D___AE_V_KR_A_D_GVKG__T___ST__FN_TE
+[Candidate 2] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_DD__AE_V_K__A_D_GVKG__TI__ST__FN_TE
+[Candidate 3] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_V_K__A_D_GVKG__TI__ST_QFN_TE
+[Candidate 4] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_V_KQ_A_D_GVKG__TK__ST__FN_TE
+[Candidate 5] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_V_KK_A_D_GVKG__T___STR_FN_TE
+[Candidate 6] Partial Sequence: ATYKLILNGK_LK_ETIT_A_D___AESV_K__A_D_GVKG__T___ST__FN_TE
+[Candidate 7] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_V_KE_A_DLGVKG__T___ST__FN_TE
+[Candidate 8] Partial Sequence: ATYKLILNGK_LK_ETIT_AVD___AE_V_K__A_D_GVKG__T___ST__FN_TE
+[Candidate 9] Partial Sequence: ATYKLILNGK_LK_ETIT_A_D___AE_V_K_KA_D_GVKG__T___ST__FN_TE
+[Candidate 10] Partial Sequence: ATYKLIL_GK_LKGETIT_A_D___AE_V_K__A_D_GVKG_IT___ST__FN_TE
+[Candidate 11] Partial Sequence: ATYKLIL_GK_LKTETIT_A_D___AE_V_K__A_D_GVKG__T_N_ST__FN_TE
+[Candidate 12] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D_M_AE_V_K__A_D_GVKG__T__NST__FN_TE
+[Candidate 13] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_V_K__A_D_GVKG_LT___ST__FNITE
+[Candidate 14] Partial Sequence: ATYKLILDGK_LK_ETIT_A_D___AE_V_K__A_D_GVKG__TT__ST__FN_TE
+[Candidate 15] Partial Sequence: ATYKLIL_GKLLK_ETIT_A_D___AE_V_K__A_DAGVKG__T___ST__FN_TE
+[Candidate 16] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_V_K_GA_D_GVKG__T__EST__FN_TE
+[Candidate 17] Partial Sequence: ATYKLIL_GK_LK_ETITPA_D_K_AE_V_K__A_D_GVKG__T___ST__FN_TE
+[Candidate 18] Partial Sequence: ATYKLILMGK_LK_ETIT_A_D___AE_V_KE_A_D_GVKG__T___ST__FN_TE
+[Candidate 19] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D_A_AE_V_KK_A_D_GVKG__T___ST__FN_TE
+[Candidate 20] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_VFK__A_D_GVKG__T_N_ST__FN_TE
+
+--- Step 6 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILTGKDLKGETITTAKDKKEAEAVAKRIAKDLGVKGTVTVDGSTGTFNVTE
+  pTM: 0.4928
+  Score: -10.8719 | ddG: 10.872 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILNGKELKTETITGAKDDAEAEAVAKKLAKDLGVKGKITIDKSTKTFNITE
+  pTM: 0.5757
+  Score: -12.1568 | ddG: 12.157 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILNGKELKTETITAAKDAAEAEKVAKKLAKDLGVKGKITIDKSTKQFNITE
+  pTM: 0.5973
+  Score: -11.5331 | ddG: 11.533 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILNGKELKTETITGAKDAAEAEKVAKQIAKDLGVKGTVTKVGSTYTFNVTE
+  pTM: 0.5132
+  Score: -14.9106 | ddG: 14.911 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILKGKGLKTETITVAKDKKEAEAVAKKLAKDLGVKGKVTVKGSTRTFNVTE
+  pTM: 0.4626
+  Score: -12.9931 | ddG: 12.993 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILNGKELKTETITGAKDKATAESVAKKLAKDKGVKGKVTYDASTKTFNITE
+  pTM: 0.6679
+  Score: -11.1159 | ddG: 11.116 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILNGKELKTETITVAKDKAEAEKVAKEIAKDLGVKGKVTVDGSTGTFNVTE
+  pTM: 0.4882
+  Score: -13.5351 | ddG: 13.535 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILNGKELKTETITGAVDKATAEAVAKKLAADLGVKGKVTYDASTKTFNITE
+  pTM: 0.6211
+  Score: -9.9612 | ddG: 9.961 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILNGKELKTETITVAADATAAELVAKIKALDLGVKGTVTVDGSTITFNITE
+  pTM: 0.3222
+  Score: -18.0185 | ddG: 18.018 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILNGKDLKGETITVAADKATAEAVAKKLAKDLGVKGTITVDGSTITFNVTE
+  pTM: 0.3857
+  Score: -13.3275 | ddG: 13.328 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILNGKELKTETITLAKDAATAEAVAKKLAKDAGVKGTVTYNASTKTFNITE
+  pTM: 0.5772
+  Score: -12.1596 | ddG: 12.160 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILNGKKLKGETITVASDGMTAEEVAKKLAKDLGVKGTVTVDNSTITFNITE
+  pTM: 0.3664
+  Score: -15.2619 | ddG: 15.262 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILNGKELKTETITVAKDKAAAEAVAKKLAKDLGVKGKLTYDKSTKTFNITE
+  pTM: 0.6290
+  Score: -9.0423 | ddG: 9.042 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILDGKELKTETITVATDKATAEAVAKKLAKDLGVKGTVTTDGSTVTFNVTE
+  pTM: 0.5100
+  Score: -18.7925 | ddG: 18.793 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILNGKLLKTETITGAADKAAAEAVAKKLAADAGVKGKVTFNASTKTFNITE
+  pTM: 0.6955
+  Score: -12.8120 | ddG: 12.812 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILDGKELKTETITVAADAATAELVLKAGAADAGVKGTVTVTESTVTFNVTE
+  pTM: 0.2357
+  Score: -18.4242 | ddG: 18.424 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILNGKELKTETITPAKDAKAAEAVAKKWAKDAGVKGKVTYDGSTGTFNITE
+  pTM: 0.6033
+  Score: -14.0248 | ddG: 14.025 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILMGKGLKTETITEAKDKEEAEKVAKEIAKDLGVKGKVTVDGSTGTFNVTE
+  pTM: 0.4199
+  Score: -15.2078 | ddG: 15.208 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILNGKELKTETITGAKDKAAAEAVAKKLAADKGVKGTVTFDASTKTFNITE
+  pTM: 0.5775
+  Score: -11.1424 | ddG: 11.142 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILNGKTLKGETITVAADKAKAEAVFKKLAKDLGVKGTLTVNGSTITFNVTE
+  pTM: 0.4377
+  Score: -7.0436 | ddG: 7.044 kcal/mol
+
+--- Step 7 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLIL_GK_LKSETIT_A_D_G_AE_VFK__A_D_GVKG__T_N_ST__FN_TE
+[Candidate 2] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AEEVFK__A_D_GVKGS_T_N_ST__FN_TE
+[Candidate 3] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D_A_AEYVFK__A_D_GVKG__T_N_ST__FN_TE
+[Candidate 4] Partial Sequence: ATYKLIL_GK_LKVETIT_A_D___AE_VFK__A_DKGVKG__T_N_ST__FN_TE
+[Candidate 5] Partial Sequence: ATYKLIL_GKTLK_ETIT_A_D___AE_VFK__A_DKGVKG__T_N_ST__FN_TE
+[Candidate 6] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_VFK_LA_D_GVKGH_T_N_ST__FN_TE
+[Candidate 7] Partial Sequence: ATYKLIL_GK_LK_ETITLA_D___AEIVFK__A_D_GVKG__T_N_ST__FN_TE
+[Candidate 8] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_VFK__A_D_GVKGKLT_N_ST__FN_TE
+[Candidate 9] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D_E_AE_VFK__A_D_GVKG__TTN_ST__FN_TE
+[Candidate 10] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_DR__AE_VFK__A_D_GVKG__T_N_ST_TFN_TE
+[Candidate 11] Partial Sequence: ATYKLIL_GKGLK_ETIT_A_D___AE_VFK__A_D_GVKG__T_N_ST_IFN_TE
+[Candidate 12] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D__DAE_VFK__A_D_GVKG__T_N_ST_TFN_TE
+[Candidate 13] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_VFK__A_DKGVKGT_T_N_ST__FN_TE
+[Candidate 14] Partial Sequence: ATYKLIL_GK_LK_ETITGA_D___AE_VFK__A_D_GVKG__TLN_ST__FN_TE
+[Candidate 15] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D__KAE_VFK__A_D_GVKG__T_N_ST_TFN_TE
+[Candidate 16] Partial Sequence: ATYKLILTGK_LKQETIT_A_D___AE_VFK__A_D_GVKG__T_N_ST__FN_TE
+[Candidate 17] Partial Sequence: ATYKLILDGK_LK_ETIT_A_D___AE_VFK__A_D_GVKG__T_N_ST__FNATE
+[Candidate 18] Partial Sequence: ATYKLIL_GK_LK_ETITTA_D___AELVFK__A_D_GVKG__T_N_ST__FN_TE
+[Candidate 19] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_DG__AE_VFK_KA_D_GVKG__T_N_ST__FN_TE
+[Candidate 20] Partial Sequence: ATYKLIL_GK_LK_ETIT_AGD___AE_VFK__A_D_GVKG__T_NSST__FN_TE
+
+--- Step 7 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILNGKELKSETITVAADKGKAEAVFKKLAKDAGVKGTVTVNGSTITFNITE
+  pTM: 0.4962
+  Score: -13.0161 | ddG: 13.016 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILNGKTLKGETITVAKDKKTAEEVFKKLAKDLGVKGSVTVNGSTITFNITE
+  pTM: 0.4272
+  Score: -9.0539 | ddG: 9.054 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILNGKELKTETITLAADKATAEYVFKVTAADAGVKGTLTVNGSTLTFNITE
+  pTM: 0.2144
+  Score: -12.3647 | ddG: 12.365 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILDGKTLKVETITKAGDGKKAEAVFKLTATDKGVKGTITVNGSTYTFNLTE
+  pTM: 0.3337
+  Score: -13.8657 | ddG: 13.866 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILNGKTLKTETITVAKDKATAEKVFKKWAKDKGVKGTITYNASTKTFNVTE
+  pTM: 0.5777
+  Score: -6.7050 | ddG: 6.705 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILDGKTLKGETITLALDKATAEAVFKKLAKDLGVKGHLTVNGSTITFNITE
+  pTM: 0.3607
+  Score: -7.6616 | ddG: 7.662 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILDGKELKTETITLAKDKKKAEIVFKKLAKDKGVKGTITVNGSTITFNITE
+  pTM: 0.2618
+  Score: -10.9593 | ddG: 10.959 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILDGKTLKGETITVAKDKKTAEAVFKKLAKDLGVKGKLTVNGSTLTFNITE
+  pTM: 0.3939
+  Score: -3.9909 | ddG: 3.991 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILNGKELKEETITGAKDKETAEKVFKKLAKDLGVKGTFTTNGSTITFNVTE
+  pTM: 0.5385
+  Score: -13.2302 | ddG: 13.230 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILNGKELKGETITVAADRATAEAVFKKLAKDLGVKGTLTVNGSTITFNVTE
+  pTM: 0.4866
+  Score: -7.7345 | ddG: 7.734 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILEGKGLKGETITVAKDKKTAEAVFKKLAKDLGVKGTLTVNGSTIIFNITE
+  pTM: 0.3753
+  Score: -8.3311 | ddG: 8.331 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILNGKTLKGETITVAADKADAEKVFKKLAKDLGVKGTLTVNGSTITFNVTE
+  pTM: 0.4178
+  Score: -8.7866 | ddG: 8.787 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILDGKTLKGETITVAGDGKKAEIVFKGTATDKGVKGTVTVNGSTYTFNLTE
+  pTM: 0.3136
+  Score: -10.6051 | ddG: 10.605 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILNGKTLKTETITGAADKAKAEAVFKKLAKDLGVKGTLTLNGSTLTFNVTE
+  pTM: 0.4272
+  Score: -7.6083 | ddG: 7.608 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILNGKELKTETITVAADKAKAEAVFKKLAKDLGVKGTVTVNGSTITFNVTE
+  pTM: 0.4295
+  Score: -11.9162 | ddG: 11.916 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILTGKGLKQETITVAADKATAEAVFKKLAKDLGVKGTLTVNGSTITFNITE
+  pTM: 0.3624
+  Score: -11.7116 | ddG: 11.712 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILDGKELKTETITVAADKAKAEAVFKKLAKDLGVKGTLTVNGSTITFNATE
+  pTM: 0.4533
+  Score: -13.3204 | ddG: 13.320 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILNGKELKTETITTAADGKTAELVFKGTAGDKGVKGTITVNGSTVTFNITE
+  pTM: 0.2888
+  Score: -18.0219 | ddG: 18.022 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILDGKTLKGETITVAADGKTAEVVFKGKAGDKGVKGTITVNGSTVTFNLTE
+  pTM: 0.2735
+  Score: -12.8165 | ddG: 12.816 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILNGKTLKTETITVAGDKATAEAVFKKLAADLGVKGTVTFNSSTITFNITE
+  pTM: 0.3382
+  Score: -9.6440 | ddG: 9.644 kcal/mol
+
+--- Step 8 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLILNGK_LK_ETIT_A_D___AE_VFK__A_D_GVKGKLTVN_ST__FN_TE
+[Candidate 2] Partial Sequence: ATYKLILTGKPLK_ETIT_A_D___AE_VFK__A_D_GVKGKLT_N_ST__FN_TE
+[Candidate 3] Partial Sequence: ATYKLILRGK_LK_ETIT_A_D___AE_VFK__A_D_GVKGKLT_N_STV_FN_TE
+[Candidate 4] Partial Sequence: ATYKLIL_GK_LKAETITFA_D___AE_VFK__A_D_GVKGKLT_N_ST__FN_TE
+[Candidate 5] Partial Sequence: ATYKLIL_GK_LKPETIT_A_D__KAE_VFK__A_D_GVKGKLT_N_ST__FN_TE
+[Candidate 6] Partial Sequence: ATYKLIL_GK_LK_ETITYA_D___AE_VFK__A_DCGVKGKLT_N_ST__FN_TE
+[Candidate 7] Partial Sequence: ATYKLILSGK_LK_ETIT_A_D___AE_VFK_IA_D_GVKGKLT_N_ST__FN_TE
+[Candidate 8] Partial Sequence: ATYKLIL_GK_LKRETIT_A_D___AE_VFK__A_D_GVKGKLT_N_ST__FNVTE
+[Candidate 9] Partial Sequence: ATYKLIL_GK_LK_ETITTA_D___AE_VFK__ARD_GVKGKLT_N_ST__FN_TE
+[Candidate 10] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D__TAE_VFK__A_D_GVKGKLT_N_STF_FN_TE
+[Candidate 11] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 12] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_VFK__A_D_GVKGKLT_NPST__FNATE
+[Candidate 13] Partial Sequence: ATYKLIL_GK_LK_ETITVA_D___AE_VFK__A_DTGVKGKLT_N_ST__FN_TE
+[Candidate 14] Partial Sequence: ATYKLILTGK_LK_ETIT_A_D__EAE_VFK__A_D_GVKGKLT_N_ST__FN_TE
+[Candidate 15] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AE_VFK__AKD_GVKGKLT_N_ST_TFN_TE
+[Candidate 16] Partial Sequence: ATYKLILKGK_LK_ETIT_A_D___AE_VFK__A_D_GVKGKLTQN_ST__FN_TE
+[Candidate 17] Partial Sequence: ATYKLIL_GK_LKTETIT_A_D___AE_VFK__A_D_GVKGKLT_N_ST__FNFTE
+[Candidate 18] Partial Sequence: ATYKLILIGK_LK_ETIT_A_D___AE_VFK__A_D_GVKGKLT_N_ST__FNVTE
+[Candidate 19] Partial Sequence: ATYKLIL_GK_LKVETIT_A_D___AE_VFK__A_D_GVKGKLT_N_ST__FNVTE
+[Candidate 20] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_DV__AE_VFK__A_D_GVKGKLT_N_ST_EFN_TE
+
+--- Step 8 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILNGKELKTETITVAADKKTAEKVFKKLAKDLGVKGKLTVNGSTVTFNVTE
+  pTM: 0.4359
+  Score: -10.2473 | ddG: 10.247 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILTGKPLKGETITVALDKKTAEAVFKKLAKDLGVKGKLTVNGSTLTFNITE
+  pTM: 0.4737
+  Score: -7.2502 | ddG: 7.250 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILRGKKLKGETITVAADKKTAEEVFKKLAKDLGVKGKLTVNGSTVTFNVTE
+  pTM: 0.3870
+  Score: -5.7632 | ddG: 5.763 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILDGKTLKAETITFAGDKATAEAVFKKLAKDLGVKGKLTVNGSTLTFNVTE
+  pTM: 0.3754
+  Score: -5.9288 | ddG: 5.929 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILNGKELKPETITVAKDKAKAEAVFKKLAKDLGVKGKLTVNGSTLTFNVTE
+  pTM: 0.3817
+  Score: -8.6704 | ddG: 8.670 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILNGKTLKGETITYAGDKKTAEKVFKKIAKDCGVKGKLTVNGSTITFNITE
+  pTM: 0.4285
+  Score: -8.9571 | ddG: 8.957 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILSGKKLKGETITLALDKKTAEEVFKKIAKDLGVKGKLTINGSTITFNITE
+  pTM: 0.4156
+  Score: -6.6394 | ddG: 6.639 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILDGKTLKRETITVAKDKKTAEAVFKKLAKDLGVKGKLTVNGSTLTFNVTE
+  pTM: 0.3975
+  Score: -4.8039 | ddG: 4.804 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILNGKKLKGETITTAKDKKTAEKVFKKLARDLGVKGKLTVNGSTLTFNITE
+  pTM: 0.3897
+  Score: -3.5397 | ddG: 3.540 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILNGKTLKGETITVAKDGKTAEEVFKKLAKDLGVKGKLTKNGSTFTFNVTE
+  pTM: 0.3593
+  Score: -4.6503 | ddG: 4.650 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILNGKKLKGETITVAKDKATAEKVFKKLAKDLGVKGKLTVNGSTLVFNVTE
+  pTM: 0.3963
+  Score: -2.0637 | ddG: 2.064 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILDGKTLKGETITVAADKAKAEAVFKKLAKDLGVKGKLTFNPSTGTFNATE
+  pTM: 0.3311
+  Score: -2.4507 | ddG: 2.451 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILNGKTLKGETITVAADGKTAEAVFKKLAKDTGVKGKLTVNGSTITFNVTE
+  pTM: 0.3025
+  Score: -12.9968 | ddG: 12.997 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILTGKGLKGETITVALDKKEAEKVFKKLAKDLGVKGKLTVNGSTITFNVTE
+  pTM: 0.5199
+  Score: -9.9086 | ddG: 9.909 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILNGKTLKGETITVAKDKKTAEKVFKKLAKDLGVKGKLTVNGSTITFNVTE
+  pTM: 0.3726
+  Score: -6.5618 | ddG: 6.562 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILKGKKLKGETITLAKDKKTAEKVFKKLAKDLGVKGKLTQNGSTLTFNITE
+  pTM: 0.4015
+  Score: -3.6319 | ddG: 3.632 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILNGKELKTETITLAKDKKKAEKVFKKLAKDLGVKGKLTYNGSTKTFNFTE
+  pTM: 0.3968
+  Score: -8.1147 | ddG: 8.115 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILIGKGLKGETITVAKDKKTAEAVFKKLAKDLGVKGKLTVNGSTITFNVTE
+  pTM: 0.4576
+  Score: -7.9393 | ddG: 7.939 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILDGKELKVETITKAKDKKKAEAVFKKLAKDLGVKGKLTVNGSTLTFNVTE
+  pTM: 0.3989
+  Score: -7.3921 | ddG: 7.392 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILNGKELKGETITVAKDVKKAEKVFKKLAKDLGVKGKLTVNGSTLEFNVTE
+  pTM: 0.3817
+  Score: -3.8551 | ddG: 3.855 kcal/mol
+
+--- Step 9 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLIL_GK_LKTETIT_A_D___AEKVFK__A_D_GVKGKLT_N_ST_VFNLTE
+[Candidate 2] Partial Sequence: ATYKLIL_GK_LK_ETITSA_D___AEKVFK_EA_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 3] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_DK__AEKVFK__A_D_GVKGKLTKN_ST_VFN_TE
+[Candidate 4] Partial Sequence: ATYKLIL_GK_LKYETIT_A_D___AEKVFK__A_D_GVKGKLT_N_STVVFN_TE
+[Candidate 5] Partial Sequence: ATYKLIL_GK_LK_ETITNA_D___AEKVFKL_A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 6] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D__DAEKVFK__AKD_GVKGKLT_N_ST_VFN_TE
+[Candidate 7] Partial Sequence: ATYKLIL_GK_LKDETIT_ASD___AEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 8] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D_NEAEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 9] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AEKVFK_VA_D_GVKGKLTWN_ST_VFN_TE
+[Candidate 10] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D__AAEKVFK__A_D_GVKGKLT_N_ST_VFNRTE
+[Candidate 11] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_D___AEKVFKD_AED_GVKGKLT_N_ST_VFN_TE
+[Candidate 12] Partial Sequence: ATYKLILNGK_LK_ETIT_A_DS__AEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 13] Partial Sequence: ATYKLIL_GK_LK_ETITNA_D___AEKVFK__A_D_GVKGKLTKN_ST_VFN_TE
+[Candidate 14] Partial Sequence: ATYKLIL_GKALK_ETIT_A_DK__AEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 15] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_DS__AEKVFK__A_D_GVKGKLT_N_ST_VFNITE
+[Candidate 16] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 17] Partial Sequence: ATYKLIL_GK_LKGETITSA_D___AEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 18] Partial Sequence: ATYKLIL_GK_LK_ETIT_ALD__DAEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 19] Partial Sequence: ATYKLIL_GK_LK_ETIT_A_DI__AEKVFK__APD_GVKGKLT_N_ST_VFN_TE
+[Candidate 20] Partial Sequence: ATYKLIL_GKVLK_ETIT_AAD___AEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+
+--- Step 9 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILNGKTLKTETITVAKDKATAEKVFKKLAKDLGVKGKLTVNGSTLVFNLTE
+  pTM: 0.4949
+  Score: -4.9812 | ddG: 4.981 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILNGKELKTETITSAKDKKEAEKVFKKEAKDKGVKGKLTYNKSTKVFNITE
+  pTM: 0.5807
+  Score: -9.0422 | ddG: 9.042 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILNGKKLKGETITVALDKAEAEKVFKKLAKDLGVKGKLTKNGSTLVFNVTE
+  pTM: 0.4154
+  Score: -4.3657 | ddG: 4.366 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILNGKKLKYETITVAKDKATAEKVFKKLAKDLGVKGKLTVNGSTVVFNVTE
+  pTM: 0.4457
+  Score: -7.7607 | ddG: 7.761 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILNGKELKTETITNAKDKATAEKVFKLLAKDLGVKGKLTVNGSTLVFNVTE
+  pTM: 0.4478
+  Score: -5.8855 | ddG: 5.886 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILNGKKLKGETITVAKDKKDAEKVFKKLAKDLGVKGKLTKNGSTLVFNVTE
+  pTM: 0.4314
+  Score: -4.3889 | ddG: 4.389 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILNGKTLKDETITIASDKATAEKVFKKLAKDLGVKGKLTVNGSTLVFNVTE
+  pTM: 0.4763
+  Score: -5.2685 | ddG: 5.268 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILNGKELKEETITGAKDKNEAEKVFKKLAKDLGVKGKLTKNGSTLVFNVTE
+  pTM: 0.4865
+  Score: -8.9138 | ddG: 8.914 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILNGKELKGETITVAKDKATAEKVFKKVAKDLGVKGKLTWNGSTKVFNVTE
+  pTM: 0.4820
+  Score: -3.8920 | ddG: 3.892 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILDGKELKGETITVAADKAAAEKVFKKLAKDLGVKGKLTVNGSTLVFNRTE
+  pTM: 0.5213
+  Score: -5.4886 | ddG: 5.489 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILNGKKLKGETITVAKDKATAEKVFKDLAEDLGVKGKLTVNGSTLVFNVTE
+  pTM: 0.4541
+  Score: -2.9826 | ddG: 2.983 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILNGKELKGETITVAVDSATAEKVFKKLAKDLGVKGKLTVNGSTLVFNVTE
+  pTM: 0.4361
+  Score: -3.2857 | ddG: 3.286 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILNGKELKTETITNAKDLKEAEKVFKKLAKDLGVKGKLTKNGSTLVFNVTE
+  pTM: 0.4393
+  Score: -6.8752 | ddG: 6.875 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILNGKALKGETITVALDKATAEKVFKKLAKDLGVKGKLTVNGSTLVFNVTE
+  pTM: 0.4294
+  Score: -4.1321 | ddG: 4.132 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILDGKKLKGETITVALDSATAEKVFKKLAKDLGVKGKLTVNGSTLVFNITE
+  pTM: 0.3726
+  Score: -2.3789 | ddG: 2.379 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILDGKFLKGETITLAKDKEKAEKVFKKLAKDLGVKGKLTVNGSTLVFNITE
+  pTM: 0.4239
+  Score: -1.0160 | ddG: 1.016 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILNGKKLKGETITSAVDLATAEKVFKKLAKDLGVKGKLTVNGSTLVFNVTE
+  pTM: 0.4148
+  Score: -2.5653 | ddG: 2.565 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILDGKKLKGETITVALDGKDAEKVFKKLAKDLGVKGKLTKNGSTLVFNITE
+  pTM: 0.3733
+  Score: -4.3083 | ddG: 4.308 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILNGKELKTETITGAKDIAEAEKVFKELAPDLGVKGKLTYNKSTKVFNVTE
+  pTM: 0.5721
+  Score: -10.7913 | ddG: 10.791 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILNGKVLKTETITVAADKATAEKVFKKLAKDLGVKGKLTVNGSTLVFNVTE
+  pTM: 0.4614
+  Score: -7.2459 | ddG: 7.246 kcal/mol
+
+--- Step 10 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLIL_GKFLK_ETITMAND__KAEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 2] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFKG_A_D_GVKGKLT_N_STGVFN_TE
+[Candidate 3] Partial Sequence: ATYKLILIGKFLKNETIT_A_D__KAEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 4] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK__A_DKGVKGKLT_N_STIVFN_TE
+[Candidate 5] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_DLKKAEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 6] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK__AAD_GVKGKLT_N_STVVFN_TE
+[Candidate 7] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK__A_DNGVKGKLT_N_ST_VFNFTE
+[Candidate 8] Partial Sequence: ATYKLIL_GKFLK_ETITDA_D__KAEKVFKE_A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 9] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK__AID_GVKGKLTKN_ST_VFN_TE
+[Candidate 10] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK_KA_D_GVKGKLTVN_ST_VFN_TE
+[Candidate 11] Partial Sequence: ATYKLIL_GKFLK_ETITNA_DA_KAEKVFK__A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 12] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK__AFD_GVKGKLT_NGST_VFN_TE
+[Candidate 13] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK__A_D_GVKGKLTVN_ST_VFNFTE
+[Candidate 14] Partial Sequence: ATYKLIL_GKFLK_ETITKA_D__KAEKVFK__A_D_GVKGKLT_NGST_VFN_TE
+[Candidate 15] Partial Sequence: ATYKLIL_GKFLK_ETITYA_D__KAEKVFKL_A_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 16] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_DE_KAEKVFK__AAD_GVKGKLT_N_ST_VFN_TE
+[Candidate 17] Partial Sequence: ATYKLIL_GKFLKQETIT_A_D__KAEKVFK__A_DFGVKGKLT_N_ST_VFN_TE
+[Candidate 18] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D_EKAEKVFK__A_D_GVKGKLT_N_STVVFN_TE
+[Candidate 19] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_DG_KAEKVFK_LA_D_GVKGKLT_N_ST_VFN_TE
+[Candidate 20] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D_KKAEKVFK__A_D_GVKGKLT_N_ST_VFNATE
+
+--- Step 10 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILNGKFLKGETITMANDKKKAEKVFKKLAKDLGVKGKLTINGSTLVFNVTE
+  pTM: 0.4793
+  Score: -2.4052 | ddG: 2.405 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILNGKFLKEETITVAKDKKKAEKVFKGIAKDLGVKGKLTYNKSTGVFNLTE
+  pTM: 0.5470
+  Score: -5.8094 | ddG: 5.809 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILIGKFLKNETITLAFDNEKAEKVFKKIAKDLGVKGKLTINGSTLVFNITE
+  pTM: 0.4895
+  Score: -8.6739 | ddG: 8.674 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILNGKFLKDETITVAVDLKKAEKVFKKLAKDKGVKGKLTVNGSTIVFNVTE
+  pTM: 0.4872
+  Score: -10.2206 | ddG: 10.221 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILNGKFLKSETITGAKDLKKAEKVFKKKAKDKGVKGKLTFNKSTGVFNLTE
+  pTM: 0.5471
+  Score: -6.4280 | ddG: 6.428 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILNGKFLKGETITVAFDKAKAEKVFKKIAADLGVKGKLTVNGSTVVFNVTE
+  pTM: 0.5082
+  Score: -5.9693 | ddG: 5.969 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILNGKFLKGETITVAKDKKKAEKVFKKLAKDNGVKGKLTINGSTLVFNFTE
+  pTM: 0.4459
+  Score: -4.7343 | ddG: 4.734 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILNGKFLKEETITDAKDKKKAEKVFKEKAKDLGVKGKLTYNKSTGVFNITE
+  pTM: 0.6634
+  Score: -5.2072 | ddG: 5.207 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILNGKFLKGETITLAFDLEKAEKVFKKLAIDLGVKGKLTKNGSTLVFNVTE
+  pTM: 0.3827
+  Score: -2.3906 | ddG: 2.391 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILNGKFLKEETITGAKDKKKAEKVFKKKAKDLGVKGKLTVNGSTLVFNVTE
+  pTM: 0.5394
+  Score: -8.2495 | ddG: 8.249 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILNGKFLKEETITNAKDAKKAEKVFKKKAKDKGVKGKLTFNKSTGVFNITE
+  pTM: 0.6288
+  Score: -4.1020 | ddG: 4.102 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILNGKFLKGETITLALDKAKAEKVFKKLAFDLGVKGKLTVNGSTLVFNVTE
+  pTM: 0.4287
+  Score: -1.2356 | ddG: 1.236 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILNGKFLKGETITVAKDKKKAEKVFKKIAKDLGVKGKLTVNGSTVVFNFTE
+  pTM: 0.4521
+  Score: -9.5427 | ddG: 9.543 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILNGKFLKGETITKAYDGKKAEKVFKKIAKDLGVKGKLTKNGSTYVFNVTE
+  pTM: 0.4676
+  Score: -7.0282 | ddG: 7.028 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILDGKFLKGETITYAGDKAKAEKVFKLLAKDLGVKGKLTVNGSTLVFNITE
+  pTM: 0.3471
+  Score: -2.1863 | ddG: 2.186 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILDGKFLKGETITLALDEAKAEKVFKKLAADLGVKGKLTVNGSTLVFNVTE
+  pTM: 0.4783
+  Score: -2.4074 | ddG: 2.407 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILDGKFLKQETITLAKDKKKAEKVFKKLAKDFGVKGKLTKNGSTLVFNITE
+  pTM: 0.3869
+  Score: -5.9181 | ddG: 5.918 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILKGKFLKGETITGAFDGEKAEKVFKKIAKDLGVKGKLTVNGSTVVFNVTE
+  pTM: 0.5643
+  Score: -12.0632 | ddG: 12.063 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILDGKFLKGETITLAFDGEKAEKVFKKLAKDLGVKGKLTVNGSTLVFNITE
+  pTM: 0.3488
+  Score: -4.3940 | ddG: 4.394 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILNGKFLKGETITGAKDGKKAEKVFKKLAKDLGVKGKLTVNGSTIVFNATE
+  pTM: 0.4926
+  Score: -12.7660 | ddG: 12.766 kcal/mol
+
+--- Step 11 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLIL_GKFLKNETIT_ADD__KAEKVFK__AFD_GVKGKLT_NGST_VFN_TE
+[Candidate 2] Partial Sequence: ATYKLIL_GKFLKRETIT_A_D__KAEKVFK__AFD_GVKGKLT_NGST_VFNLTE
+[Candidate 3] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK_LAFDSGVKGKLT_NGST_VFN_TE
+[Candidate 4] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D_DKAEKVFKM_AFD_GVKGKLT_NGST_VFN_TE
+[Candidate 5] Partial Sequence: ATYKLIL_GKFLK_ETITIA_D__KAEKVFK_LAFD_GVKGKLT_NGST_VFN_TE
+[Candidate 6] Partial Sequence: ATYKLIL_GKFLKDETIT_A_D__KAEKVFK__AFD_GVKGKLT_NGSTMVFN_TE
+[Candidate 7] Partial Sequence: ATYKLILAGKFLK_ETITKA_D__KAEKVFK__AFD_GVKGKLT_NGST_VFN_TE
+[Candidate 8] Partial Sequence: ATYKLIL_GKFLK_ETITVAAD__KAEKVFK__AFD_GVKGKLT_NGST_VFN_TE
+[Candidate 9] Partial Sequence: ATYKLIL_GKFLK_ETITLA_D__KAEKVFK__AFDCGVKGKLT_NGST_VFN_TE
+[Candidate 10] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK_KAFD_GVKGKLT_NGSTEVFN_TE
+[Candidate 11] Partial Sequence: ATYKLILSGKFLK_ETIT_A_D__KAEKVFK__AFD_GVKGKLT_NGSTIVFN_TE
+[Candidate 12] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D_DKAEKVFKG_AFD_GVKGKLT_NGST_VFN_TE
+[Candidate 13] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK_LAFD_GVKGKLT_NGSTLVFN_TE
+[Candidate 14] Partial Sequence: ATYKLIL_GKFLKIETITLA_D__KAEKVFK__AFD_GVKGKLT_NGST_VFN_TE
+[Candidate 15] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK__AFDQGVKGKLT_NGSTSVFN_TE
+[Candidate 16] Partial Sequence: ATYKLIL_GKFLK_ETIT_ALD__KAEKVFK__AFD_GVKGKLT_NGSTLVFN_TE
+[Candidate 17] Partial Sequence: ATYKLIL_GKFLKLETIT_A_D__KAEKVFK__AFD_GVKGKLT_NGSTLVFN_TE
+[Candidate 18] Partial Sequence: ATYKLILDGKFLK_ETIT_A_DE_KAEKVFK__AFD_GVKGKLT_NGST_VFN_TE
+[Candidate 19] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK_IAFD_GVKGKLTINGST_VFN_TE
+[Candidate 20] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D__KAEKVFK__AFDDGVKGKLT_NGST_VFNITE
+
+--- Step 11 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILNGKFLKNETITVADDKKKAEKVFKKLAFDKGVKGKLTKNGSTYVFNKTE
+  pTM: 0.5772
+  Score: -9.7915 | ddG: 9.791 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILNGKFLKRETITGAFDGEKAEKVFKKLAFDLGVKGKLTKNGSTLVFNLTE
+  pTM: 0.4264
+  Score: -6.8559 | ddG: 6.856 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILDGKFLKGETITLAFDKEKAEKVFKKLAFDSGVKGKLTINGSTLVFNVTE
+  pTM: 0.3401
+  Score: -2.6662 | ddG: 2.666 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILDGKFLKGETITLALDKDKAEKVFKMLAFDLGVKGKLTKNGSTLVFNVTE
+  pTM: 0.4109
+  Score: -1.9336 | ddG: 1.934 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILDGKFLKDETITIALDKEKAEKVFKKLAFDLGVKGKLTKNGSTLVFNITE
+  pTM: 0.3152
+  Score: -7.0331 | ddG: 7.033 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILDGKFLKDETITLAFDKEKAEKVFKKLAFDLGVKGKLTVNGSTMVFNVTE
+  pTM: 0.3288
+  Score: -5.0267 | ddG: 5.027 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILAGKFLKTETITKALDKKKAEKVFKKLAFDKGVKGKLTKNGSTLVFNVTE
+  pTM: 0.4985
+  Score: -7.3957 | ddG: 7.396 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILNGKFLKGETITVAADGAKAEKVFKKLAFDAGVKGKLTVNGSTLVFNVTE
+  pTM: 0.4806
+  Score: -6.3925 | ddG: 6.393 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILDGKFLKGETITLAKDKEKAEKVFKKLAFDCGVKGKLTVNGSTLVFNITE
+  pTM: 0.4687
+  Score: -4.3742 | ddG: 4.374 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILDGKFLKTETITVAKDKKKAEKVFKKKAFDKGVKGKLTINGSTEVFNLTE
+  pTM: 0.3767
+  Score: -5.4373 | ddG: 5.437 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILSGKFLKGETITLALDLEKAEKVFKKLAFDKGVKGKLTVNGSTIVFNKTE
+  pTM: 0.3565
+  Score: -11.0341 | ddG: 11.034 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILNGKFLKEETITVATDKDKAEKVFKGYAFDKGVKGKLTVNGSTLVFNVTE
+  pTM: 0.4097
+  Score: -7.1596 | ddG: 7.160 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILDGKFLKDETITLAFDKEKAEKVFKKLAFDLGVKGKLTKNGSTLVFNVTE
+  pTM: 0.3737
+  Score: -6.0589 | ddG: 6.059 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILDGKFLKIETITLAKDKKKAEKVFKKLAFDLGVKGKLTKNGSTLVFNVTE
+  pTM: 0.4091
+  Score: -6.4660 | ddG: 6.466 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILNGKFLKEETITVAKDKKKAEKVFKKLAFDQGVKGKLTVNGSTSVFNVTE
+  pTM: 0.4743
+  Score: -7.3106 | ddG: 7.311 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILDGKFLKGETITLALDGEKAEKVFKKLAFDKGVKGKLTKNGSTLVFNVTE
+  pTM: 0.3565
+  Score: -2.9461 | ddG: 2.946 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILDGKFLKLETITKAGDGKKAEKVFKKKAFDKGVKGKLTLNGSTLVFNKTE
+  pTM: 0.2488
+  Score: -10.6742 | ddG: 10.674 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILDGKFLKGETITLAKDEAKAEKVFKKLAFDLGVKGKLTKNGSTLVFNVTE
+  pTM: 0.4082
+  Score: -2.0042 | ddG: 2.004 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILNGKFLKDETITLAFDKEKAEKVFKKIAFDLGVKGKLTINGSTVVFNVTE
+  pTM: 0.4906
+  Score: -9.0875 | ddG: 9.087 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILNGKFLKEETITGATDKAKAEKVFKKLAFDDGVKGKLTKNGSTYVFNITE
+  pTM: 0.4908
+  Score: -10.2066 | ddG: 10.207 kcal/mol
+
+--- Step 12 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLIL_GKFLK_ETIT_ADD_DKAEKVFKM_AFD_GVKGKLT_NGSTLVFN_TE
+[Candidate 2] Partial Sequence: ATYKLILDGKFLK_ETIT_A_D_DKAEKVFKM_AFDKGVKGKLT_NGST_VFN_TE
+[Candidate 3] Partial Sequence: ATYKLILYGKFLK_ETIT_A_D_DKAEKVFKM_AFD_GVKGKLTLNGST_VFN_TE
+[Candidate 4] Partial Sequence: ATYKLIL_GKFLK_ETITVA_DADKAEKVFKM_AFD_GVKGKLT_NGST_VFN_TE
+[Candidate 5] Partial Sequence: ATYKLIL_GKFLK_ETIT_ARD_DKAEKVFKM_AFD_GVKGKLT_NGST_VFNPTE
+[Candidate 6] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D_DKAEKVFKM_AFDTGVKGKLT_NGSTIVFN_TE
+[Candidate 7] Partial Sequence: ATYKLIL_GKFLK_ETIT_AADLDKAEKVFKM_AFD_GVKGKLT_NGST_VFN_TE
+[Candidate 8] Partial Sequence: ATYKLIL_GKFLK_ETITFA_D_DKAEKVFKM_AFD_GVKGKLT_NGST_VFNITE
+[Candidate 9] Partial Sequence: ATYKLIL_GKFLK_ETITTA_D_DKAEKVFKM_AFD_GVKGKLT_NGST_VFNSTE
+[Candidate 10] Partial Sequence: ATYKLIL_GKFLKKETIT_A_D_DKAEKVFKM_AFDAGVKGKLT_NGST_VFN_TE
+[Candidate 11] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D_DKAEKVFKM_AFDLGVKGKLT_NGSTAVFN_TE
+[Candidate 12] Partial Sequence: ATYKLIL_GKFLK_ETITTA_D_DKAEKVFKMKAFD_GVKGKLT_NGST_VFN_TE
+[Candidate 13] Partial Sequence: ATYKLIL_GKFLKLETIT_A_D_DKAEKVFKM_AFD_GVKGKLT_NGSTLVFN_TE
+[Candidate 14] Partial Sequence: ATYKLILTGKFLK_ETITLA_D_DKAEKVFKM_AFD_GVKGKLT_NGST_VFN_TE
+[Candidate 15] Partial Sequence: ATYKLIL_GKFLKNETIT_A_D_DKAEKVFKM_AFD_GVKGKLT_NGST_VFNVTE
+[Candidate 16] Partial Sequence: ATYKLILVGKFLK_ETIT_A_D_DKAEKVFKM_AFDKGVKGKLT_NGST_VFN_TE
+[Candidate 17] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D_DKAEKVFKM_AFD_GVKGKLTINGSTMVFN_TE
+[Candidate 18] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_D_DKAEKVFKM_AFDHGVKGKLT_NGSTVVFN_TE
+[Candidate 19] Partial Sequence: ATYKLIL_GKFLKTETIT_A_DSDKAEKVFKM_AFD_GVKGKLT_NGST_VFN_TE
+[Candidate 20] Partial Sequence: ATYKLIL_GKFLK_ETIT_A_DFDKAEKVFKM_AFD_GVKGKLTKNGST_VFN_TE
+
+--- Step 12 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILNGKFLKEETITVADDLDKAEKVFKMLAFDKGVKGKLTKNGSTLVFNVTE
+  pTM: 0.5592
+  Score: -5.9743 | ddG: 5.974 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILDGKFLKEETITVASDKDKAEKVFKMLAFDKGVKGKLTKNGSTYVFNKTE
+  pTM: 0.4775
+  Score: -10.9311 | ddG: 10.931 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILYGKFLKGETITLALDLDKAEKVFKMLAFDLGVKGKLTLNGSTLVFNVTE
+  pTM: 0.4194
+  Score: -1.8042 | ddG: 1.804 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILDGKFLKGETITVAADADKAEKVFKMLAFDKGVKGKLTVNGSTLVFNVTE
+  pTM: 0.3206
+  Score: -2.9736 | ddG: 2.974 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILDGKFLKGETITIARDLDKAEKVFKMLAFDLGVKGKLTVNGSTLVFNPTE
+  pTM: 0.3490
+  Score: -5.9739 | ddG: 5.974 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILDGKFLKGETITLAFDLDKAEKVFKMLAFDTGVKGKLTVNGSTIVFNVTE
+  pTM: 0.3739
+  Score: -9.4547 | ddG: 9.455 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILNGKFLKEETITGAADLDKAEKVFKMKAFDKGVKGKLTKNGSTLVFNKTE
+  pTM: 0.4661
+  Score: -9.6570 | ddG: 9.657 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILDGKFLKGETITFAKDKDKAEKVFKMLAFDLGVKGKLTKNGSTLVFNITE
+  pTM: 0.3709
+  Score: -2.7751 | ddG: 2.775 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILNGKFLKGETITTAFDKDKAEKVFKMIAFDLGVKGKLTKNGSTLVFNSTE
+  pTM: 0.5167
+  Score: -7.6604 | ddG: 7.660 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILNGKFLKKETITLAFDADKAEKVFKMLAFDAGVKGKLTVNGSTLVFNVTE
+  pTM: 0.4554
+  Score: -7.9123 | ddG: 7.912 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILDGKFLKGETITLALDKDKAEKVFKMLAFDLGVKGKLTINGSTAVFNITE
+  pTM: 0.3988
+  Score: -2.2842 | ddG: 2.284 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILNGKFLKEETITTALDLDKAEKVFKMKAFDLGVKGKLTKNGSTYVFNVTE
+  pTM: 0.4686
+  Score: -6.5191 | ddG: 6.519 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILDGKFLKLETITKAKDKDKAEKVFKMLAFDKGVKGKLTLNGSTLVFNKTE
+  pTM: 0.2776
+  Score: -7.8920 | ddG: 7.892 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILTGKFLKDETITLALDKDKAEKVFKMLAFDKGVKGKLTKNGSTLVFNITE
+  pTM: 0.3413
+  Score: -6.7488 | ddG: 6.749 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILDGKFLKNETITLALDLDKAEKVFKMLAFDLGVKGKLTKNGSTLVFNVTE
+  pTM: 0.3705
+  Score: -4.1520 | ddG: 4.152 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILVGKFLKGETITVAFDLDKAEKVFKMLAFDKGVKGKLTVNGSTLVFNVTE
+  pTM: 0.5377
+  Score: -3.8253 | ddG: 3.825 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILNGKFLKGETITVAFDKDKAEKVFKMLAFDLGVKGKLTINGSTMVFNVTE
+  pTM: 0.4990
+  Score: -2.2558 | ddG: 2.256 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILNGKFLKGETITVAVDLDKAEKVFKMLAFDHGVKGKLTVNGSTVVFNVTE
+  pTM: 0.4805
+  Score: -5.9057 | ddG: 5.906 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILNGKFLKTETITVASDSDKAEKVFKMLAFDLGVKGKLTKNGSTLVFNVTE
+  pTM: 0.4471
+  Score: -5.7238 | ddG: 5.724 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILDGKFLKGETITGAKDFDKAEKVFKMLAFDLGVKGKLTKNGSTYVFNITE
+  pTM: 0.4771
+  Score: -2.8260 | ddG: 2.826 kcal/mol
+
+--- Step 13 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLILYGKFLK_ETIT_A_DTDKAEKVFKM_AFDLGVKGKLTLNGST_VFN_TE
+[Candidate 2] Partial Sequence: ATYKLILYGKFLK_ETIT_A_DPDKAEKVFKMNAFD_GVKGKLTLNGST_VFN_TE
+[Candidate 3] Partial Sequence: ATYKLILYGKFLK_ETIT_A_DPDKAEKVFKM_AFD_GVKGKLTLNGSTCVFN_TE
+[Candidate 4] Partial Sequence: ATYKLILYGKFLK_ETITGA_D_DKAEKVFKM_AFD_GVKGKLTLNGST_VFNVTE
+[Candidate 5] Partial Sequence: ATYKLILYGKFLK_ETITPA_D_DKAEKVFKM_AFD_GVKGKLTLNGSTYVFN_TE
+[Candidate 6] Partial Sequence: ATYKLILYGKFLK_ETIT_A_D_DKAEKVFKMRAFD_GVKGKLTLNGST_VFNSTE
+[Candidate 7] Partial Sequence: ATYKLILYGKFLK_ETITQA_DRDKAEKVFKM_AFD_GVKGKLTLNGST_VFN_TE
+[Candidate 8] Partial Sequence: ATYKLILYGKFLK_ETIT_A_D_DKAEKVFKMEAFD_GVKGKLTLNGST_VFNITE
+[Candidate 9] Partial Sequence: ATYKLILYGKFLKDETIT_A_DYDKAEKVFKM_AFD_GVKGKLTLNGST_VFN_TE
+[Candidate 10] Partial Sequence: ATYKLILYGKFLKTETITLA_D_DKAEKVFKM_AFD_GVKGKLTLNGST_VFN_TE
+[Candidate 11] Partial Sequence: ATYKLILYGKFLK_ETIT_A_DLDKAEKVFKM_AFD_GVKGKLTLNGSTVVFN_TE
+[Candidate 12] Partial Sequence: ATYKLILYGKFLK_ETIT_A_DVDKAEKVFKMGAFD_GVKGKLTLNGST_VFN_TE
+[Candidate 13] Partial Sequence: ATYKLILYGKFLKDETIT_A_D_DKAEKVFKM_AFD_GVKGKLTLNGSTGVFN_TE
+[Candidate 14] Partial Sequence: ATYKLILYGKFLK_ETITPA_D_DKAEKVFKM_AFDLGVKGKLTLNGST_VFN_TE
+[Candidate 15] Partial Sequence: ATYKLILYGKFLKQETIT_A_D_DKAEKVFKM_AFD_GVKGKLTLNGST_VFNATE
+[Candidate 16] Partial Sequence: ATYKLILYGKFLK_ETITYA_D_DKAEKVFKM_AFD_GVKGKLTLNGSTNVFN_TE
+[Candidate 17] Partial Sequence: ATYKLILYGKFLK_ETIT_A_DPDKAEKVFKM_AFDFGVKGKLTLNGST_VFN_TE
+[Candidate 18] Partial Sequence: ATYKLILYGKFLK_ETIT_A_D_DKAEKVFKM_AFD_GVKGKLTLNGSTLVFNRTE
+[Candidate 19] Partial Sequence: ATYKLILYGKFLK_ETIT_A_D_DKAEKVFKMKAFD_GVKGKLTLNGST_VFNVTE
+[Candidate 20] Partial Sequence: ATYKLILYGKFLKEETIT_AHD_DKAEKVFKM_AFD_GVKGKLTLNGST_VFN_TE
+
+--- Step 13 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILYGKFLKGETITLAIDTDKAEKVFKMLAFDLGVKGKLTLNGSTLVFNITE
+  pTM: 0.3847
+  Score: -0.4644 | ddG: 0.464 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILYGKFLKEETITVALDPDKAEKVFKMNAFDKGVKGKLTLNGSTLVFNVTE
+  pTM: 0.2034
+  Score: -5.4121 | ddG: 5.412 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILYGKFLKGETITLALDPDKAEKVFKMLAFDLGVKGKLTLNGSTCVFNITE
+  pTM: 0.3154
+  Score: 0.5234 | ddG: -0.523 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILYGKFLKGETITGAFDLDKAEKVFKMLAFDLGVKGKLTLNGSTLVFNVTE
+  pTM: 0.4254
+  Score: -2.3147 | ddG: 2.315 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILYGKFLKEETITPALDKDKAEKVFKMLAFDLGVKGKLTLNGSTYVFNVTE
+  pTM: 0.5465
+  Score: -5.6450 | ddG: 5.645 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILYGKFLKKETITVAKDLDKAEKVFKMRAFDLGVKGKLTLNGSTVVFNSTE
+  pTM: 0.5419
+  Score: -11.4688 | ddG: 11.469 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILYGKFLKKETITQAKDRDKAEKVFKMLAFDLGVKGKLTLNGSTVVFNKTE
+  pTM: 0.5154
+  Score: -9.1954 | ddG: 9.195 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILYGKFLKEETITVAKDKDKAEKVFKMEAFDKGVKGKLTLNGSTYVFNITE
+  pTM: 0.4440
+  Score: -6.5692 | ddG: 6.569 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILYGKFLKDETITVAGDYDKAEKVFKMKAFDKGVKGKLTLNGSTLVFNVTE
+  pTM: 0.5920
+  Score: -5.6346 | ddG: 5.635 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILYGKFLKTETITLAVDKDKAEKVFKMLAFDLGVKGKLTLNGSTLVFNVTE
+  pTM: 0.4910
+  Score: -3.8416 | ddG: 3.842 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILYGKFLKNETITVAKDLDKAEKVFKMLAFDKGVKGKLTLNGSTVVFNVTE
+  pTM: 0.6128
+  Score: -9.0114 | ddG: 9.011 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILYGKFLKTETITVAKDVDKAEKVFKMGAFDKGVKGKLTLNGSTLVFNPTE
+  pTM: 0.3919
+  Score: -12.5563 | ddG: 12.556 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILYGKFLKDETITIALDLDKAEKVFKMLAFDLGVKGKLTLNGSTGVFNITE
+  pTM: 0.3045
+  Score: -2.5236 | ddG: 2.524 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILYGKFLKGETITPAKDLDKAEKVFKMLAFDLGVKGKLTLNGSTLVFNVTE
+  pTM: 0.3337
+  Score: -1.5516 | ddG: 1.552 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILYGKFLKQETITVAVDLDKAEKVFKMLAFDLGVKGKLTLNGSTLVFNATE
+  pTM: 0.6003
+  Score: -7.7654 | ddG: 7.765 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILYGKFLKKETITYAKDKDKAEKVFKMLAFDKGVKGKLTLNGSTNVFNYTE
+  pTM: 0.4943
+  Score: -6.3751 | ddG: 6.375 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILYGKFLKGETITLAIDPDKAEKVFKMLAFDFGVKGKLTLNGSTLVFNITE
+  pTM: 0.2418
+  Score: 0.1625 | ddG: -0.162 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILYGKFLKGETITLALDKDKAEKVFKMLAFDLGVKGKLTLNGSTLVFNRTE
+  pTM: 0.4156
+  Score: -3.1473 | ddG: 3.147 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILYGKFLKEETITVAKDKDKAEKVFKMKAFDLGVKGKLTLNGSTYVFNVTE
+  pTM: 0.5210
+  Score: -5.0000 | ddG: 5.000 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILYGKFLKEETITVAHDFDKAEKVFKMIAFDLGVKGKLTLNGSTLVFNVTE
+  pTM: 0.6037
+  Score: -5.4179 | ddG: 5.418 kcal/mol
+
+--- Step 14 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLILYGKFLKKETIT_A_DPDKAEKVFKM_AFD_GVKGKLTLNGSTCVFNQTE
+[Candidate 2] Partial Sequence: ATYKLILYGKFLK_ETITTA_DPDKAEKVFKMTAFD_GVKGKLTLNGSTCVFN_TE
+[Candidate 3] Partial Sequence: ATYKLILYGKFLK_ETIT_A_DPDKAEKVFKM_AFDKGVKGKLTLNGSTCVFNITE
+[Candidate 4] Partial Sequence: ATYKLILYGKFLKLETIT_A_DPDKAEKVFKM_AFDGGVKGKLTLNGSTCVFN_TE
+[Candidate 5] Partial Sequence: ATYKLILYGKFLK_ETIT_AGDPDKAEKVFKM_AFDFGVKGKLTLNGSTCVFN_TE
+[Candidate 6] Partial Sequence: ATYKLILYGKFLKTETIT_A_DPDKAEKVFKMPAFD_GVKGKLTLNGSTCVFN_TE
+[Candidate 7] Partial Sequence: ATYKLILYGKFLK_ETIT_A_DPDKAEKVFKM_AFDAGVKGKLTLNGSTCVFNATE
+[Candidate 8] Partial Sequence: ATYKLILYGKFLK_ETIT_AGDPDKAEKVFKM_AFDSGVKGKLTLNGSTCVFN_TE
+[Candidate 9] Partial Sequence: ATYKLILYGKFLK_ETITCA_DPDKAEKVFKM_AFDYGVKGKLTLNGSTCVFN_TE
+[Candidate 10] Partial Sequence: ATYKLILYGKFLK_ETITKA_DPDKAEKVFKMLAFD_GVKGKLTLNGSTCVFN_TE
+[Candidate 11] Partial Sequence: ATYKLILYGKFLK_ETIT_A_DPDKAEKVFKMSAFDRGVKGKLTLNGSTCVFN_TE
+[Candidate 12] Partial Sequence: ATYKLILYGKFLK_ETIT_AYDPDKAEKVFKM_AFD_GVKGKLTLNGSTCVFNITE
+[Candidate 13] Partial Sequence: ATYKLILYGKFLKSETIT_AEDPDKAEKVFKM_AFD_GVKGKLTLNGSTCVFN_TE
+[Candidate 14] Partial Sequence: ATYKLILYGKFLKLETITKA_DPDKAEKVFKM_AFD_GVKGKLTLNGSTCVFN_TE
+[Candidate 15] Partial Sequence: ATYKLILYGKFLKTETIT_A_DPDKAEKVFKM_AFDPGVKGKLTLNGSTCVFN_TE
+[Candidate 16] Partial Sequence: ATYKLILYGKFLKAETITLA_DPDKAEKVFKM_AFD_GVKGKLTLNGSTCVFN_TE
+[Candidate 17] Partial Sequence: ATYKLILYGKFLKDETITVA_DPDKAEKVFKM_AFD_GVKGKLTLNGSTCVFN_TE
+[Candidate 18] Partial Sequence: ATYKLILYGKFLKEETIT_A_DPDKAEKVFKM_AFDQGVKGKLTLNGSTCVFN_TE
+[Candidate 19] Partial Sequence: ATYKLILYGKFLK_ETIT_AIDPDKAEKVFKM_AFD_GVKGKLTLNGSTCVFNITE
+[Candidate 20] Partial Sequence: ATYKLILYGKFLKAETIT_A_DPDKAEKVFKMDAFD_GVKGKLTLNGSTCVFN_TE
+
+--- Step 14 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILYGKFLKKETITVAVDPDKAEKVFKMLAFDLGVKGKLTLNGSTCVFNQTE
+  pTM: 0.4565
+  Score: -6.0125 | ddG: 6.013 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILYGKFLKEETITTATDPDKAEKVFKMTAFDKGVKGKLTLNGSTCVFNLTE
+  pTM: 0.2973
+  Score: -7.0221 | ddG: 7.022 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILYGKFLKEETITVALDPDKAEKVFKMIAFDKGVKGKLTLNGSTCVFNITE
+  pTM: 0.5551
+  Score: -6.0838 | ddG: 6.084 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILYGKFLKLETITLALDPDKAEKVFKMEAFDGGVKGKLTLNGSTCVFNLTE
+  pTM: 0.1809
+  Score: -8.5154 | ddG: 8.515 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILYGKFLKGETITIAGDPDKAEKVFKMLAFDFGVKGKLTLNGSTCVFNITE
+  pTM: 0.3231
+  Score: -0.6853 | ddG: 0.685 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILYGKFLKTETITLALDPDKAEKVFKMPAFDKGVKGKLTLNGSTCVFNVTE
+  pTM: 0.4683
+  Score: -7.5133 | ddG: 7.513 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILYGKFLKGETITVAVDPDKAEKVFKMLAFDAGVKGKLTLNGSTCVFNATE
+  pTM: 0.5319
+  Score: -6.2549 | ddG: 6.255 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILYGKFLKGETITVAGDPDKAEKVFKMLAFDSGVKGKLTLNGSTCVFNVTE
+  pTM: 0.5014
+  Score: -2.9280 | ddG: 2.928 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILYGKFLKGETITCAIDPDKAEKVFKMLAFDYGVKGKLTLNGSTCVFNITE
+  pTM: 0.4052
+  Score: -0.8325 | ddG: 0.832 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILYGKFLKKETITKAVDPDKAEKVFKMLAFDLGVKGKLTLNGSTCVFNVTE
+  pTM: 0.5208
+  Score: -2.5067 | ddG: 2.507 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILYGKFLKTETITVALDPDKAEKVFKMSAFDRGVKGKLTLNGSTCVFNVTE
+  pTM: 0.3596
+  Score: -7.5988 | ddG: 7.599 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILYGKFLKGETITIAYDPDKAEKVFKMLAFDLGVKGKLTLNGSTCVFNITE
+  pTM: 0.3073
+  Score: 0.3524 | ddG: -0.352 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILYGKFLKSETITVAEDPDKAEKVFKMLAFDKGVKGKLTLNGSTCVFNVTE
+  pTM: 0.4092
+  Score: -5.2774 | ddG: 5.277 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILYGKFLKLETITKALDPDKAEKVFKMLAFDKGVKGKLTLNGSTCVFNVTE
+  pTM: 0.3722
+  Score: -3.7460 | ddG: 3.746 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILYGKFLKTETITVALDPDKAEKVFKMLAFDPGVKGKLTLNGSTCVFNVTE
+  pTM: 0.3679
+  Score: -7.2031 | ddG: 7.203 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILYGKFLKAETITLAGDPDKAEKVFKMLAFDLGVKGKLTLNGSTCVFNITE
+  pTM: 0.3134
+  Score: -4.6157 | ddG: 4.616 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILYGKFLKDETITVAVDPDKAEKVFKMLAFDKGVKGKLTLNGSTCVFNITE
+  pTM: 0.3088
+  Score: -3.2753 | ddG: 3.275 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILYGKFLKEETITVALDPDKAEKVFKMLAFDQGVKGKLTLNGSTCVFNVTE
+  pTM: 0.5581
+  Score: -5.9275 | ddG: 5.928 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILYGKFLKGETITIAIDPDKAEKVFKMLAFDKGVKGKLTLNGSTCVFNITE
+  pTM: 0.2942
+  Score: -0.4338 | ddG: 0.434 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILYGKFLKAETITVAADPDKAEKVFKMDAFDKGVKGKLTLNGSTCVFNVTE
+  pTM: 0.2823
+  Score: -6.5744 | ddG: 6.574 kcal/mol
+
+--- Step 15 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLILYGKFLK_ETITIAYDPDKAEKVFKM_AFDKGVKGKLTLNGSTCVFNITE
+[Candidate 2] Partial Sequence: ATYKLILYGKFLK_ETITEAYDPDKAEKVFKM_AFDDGVKGKLTLNGSTCVFNITE
+[Candidate 3] Partial Sequence: ATYKLILYGKFLK_ETIT_AYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 4] Partial Sequence: ATYKLILYGKFLK_ETITIAYDPDKAEKVFKMSAFD_GVKGKLTLNGSTCVFNITE
+[Candidate 5] Partial Sequence: ATYKLILYGKFLKGETIT_AYDPDKAEKVFKM_AFDPGVKGKLTLNGSTCVFNITE
+[Candidate 6] Partial Sequence: ATYKLILYGKFLK_ETITFAYDPDKAEKVFKMVAFD_GVKGKLTLNGSTCVFNITE
+[Candidate 7] Partial Sequence: ATYKLILYGKFLK_ETIT_AYDPDKAEKVFKMNAFDKGVKGKLTLNGSTCVFNITE
+[Candidate 8] Partial Sequence: ATYKLILYGKFLK_ETITYAYDPDKAEKVFKM_AFDHGVKGKLTLNGSTCVFNITE
+[Candidate 9] Partial Sequence: ATYKLILYGKFLK_ETITAAYDPDKAEKVFKM_AFDGGVKGKLTLNGSTCVFNITE
+[Candidate 10] Partial Sequence: ATYKLILYGKFLKEETITEAYDPDKAEKVFKM_AFD_GVKGKLTLNGSTCVFNITE
+[Candidate 11] Partial Sequence: ATYKLILYGKFLK_ETIT_AYDPDKAEKVFKMIAFDSGVKGKLTLNGSTCVFNITE
+[Candidate 12] Partial Sequence: ATYKLILYGKFLK_ETIT_AYDPDKAEKVFKMYAFDYGVKGKLTLNGSTCVFNITE
+[Candidate 13] Partial Sequence: ATYKLILYGKFLK_ETITIAYDPDKAEKVFKM_AFDGGVKGKLTLNGSTCVFNITE
+[Candidate 14] Partial Sequence: ATYKLILYGKFLKPETIT_AYDPDKAEKVFKM_AFDPGVKGKLTLNGSTCVFNITE
+[Candidate 15] Partial Sequence: ATYKLILYGKFLK_ETITEAYDPDKAEKVFKMNAFD_GVKGKLTLNGSTCVFNITE
+[Candidate 16] Partial Sequence: ATYKLILYGKFLKKETITVAYDPDKAEKVFKM_AFD_GVKGKLTLNGSTCVFNITE
+[Candidate 17] Partial Sequence: ATYKLILYGKFLK_ETITIAYDPDKAEKVFKMQAFD_GVKGKLTLNGSTCVFNITE
+[Candidate 18] Partial Sequence: ATYKLILYGKFLKPETIT_AYDPDKAEKVFKMTAFD_GVKGKLTLNGSTCVFNITE
+[Candidate 19] Partial Sequence: ATYKLILYGKFLK_ETITIAYDPDKAEKVFKMAAFD_GVKGKLTLNGSTCVFNITE
+[Candidate 20] Partial Sequence: ATYKLILYGKFLK_ETIT_AYDPDKAEKVFKMIAFDIGVKGKLTLNGSTCVFNITE
+
+--- Step 15 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILYGKFLKGETITIAYDPDKAEKVFKMLAFDKGVKGKLTLNGSTCVFNITE
+  pTM: 0.2770
+  Score: -2.9893 | ddG: 2.989 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILYGKFLKEETITEAYDPDKAEKVFKMLAFDDGVKGKLTLNGSTCVFNITE
+  pTM: 0.3271
+  Score: -6.2326 | ddG: 6.233 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILYGKFLKGETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.3812
+  Score: -0.9617 | ddG: 0.962 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILYGKFLKGETITIAYDPDKAEKVFKMSAFDKGVKGKLTLNGSTCVFNITE
+  pTM: 0.3104
+  Score: -2.5143 | ddG: 2.514 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILYGKFLKGETITIAYDPDKAEKVFKMLAFDPGVKGKLTLNGSTCVFNITE
+  pTM: 0.2854
+  Score: -4.2404 | ddG: 4.240 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILYGKFLKGETITFAYDPDKAEKVFKMVAFDKGVKGKLTLNGSTCVFNITE
+  pTM: 0.3256
+  Score: -2.1439 | ddG: 2.144 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILYGKFLKEETITVAYDPDKAEKVFKMNAFDKGVKGKLTLNGSTCVFNITE
+  pTM: 0.4329
+  Score: -6.6471 | ddG: 6.647 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILYGKFLKGETITYAYDPDKAEKVFKMLAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.4432
+  Score: -1.2431 | ddG: 1.243 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILYGKFLKGETITAAYDPDKAEKVFKMLAFDGGVKGKLTLNGSTCVFNITE
+  pTM: 0.2971
+  Score: -3.9457 | ddG: 3.946 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILYGKFLKEETITEAYDPDKAEKVFKMLAFDLGVKGKLTLNGSTCVFNITE
+  pTM: 0.5583
+  Score: -3.2251 | ddG: 3.225 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILYGKFLKKETITIAYDPDKAEKVFKMIAFDSGVKGKLTLNGSTCVFNITE
+  pTM: 0.3789
+  Score: -5.2509 | ddG: 5.251 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILYGKFLKGETITLAYDPDKAEKVFKMYAFDYGVKGKLTLNGSTCVFNITE
+  pTM: 0.5121
+  Score: -1.3297 | ddG: 1.330 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILYGKFLKGETITIAYDPDKAEKVFKMTAFDGGVKGKLTLNGSTCVFNITE
+  pTM: 0.3083
+  Score: -4.9735 | ddG: 4.974 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILYGKFLKPETITVAYDPDKAEKVFKMLAFDPGVKGKLTLNGSTCVFNITE
+  pTM: 0.3646
+  Score: -10.3240 | ddG: 10.324 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILYGKFLKEETITEAYDPDKAEKVFKMNAFDKGVKGKLTLNGSTCVFNITE
+  pTM: 0.4702
+  Score: -6.0162 | ddG: 6.016 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILYGKFLKKETITVAYDPDKAEKVFKMLAFDKGVKGKLTLNGSTCVFNITE
+  pTM: 0.3079
+  Score: -5.4298 | ddG: 5.430 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILYGKFLKGETITIAYDPDKAEKVFKMQAFDKGVKGKLTLNGSTCVFNITE
+  pTM: 0.2906
+  Score: -1.2844 | ddG: 1.284 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILYGKFLKPETITVAYDPDKAEKVFKMTAFDKGVKGKLTLNGSTCVFNITE
+  pTM: 0.3849
+  Score: -9.0934 | ddG: 9.093 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILYGKFLKGETITIAYDPDKAEKVFKMAAFDLGVKGKLTLNGSTCVFNITE
+  pTM: 0.3139
+  Score: -3.6218 | ddG: 3.622 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILYGKFLKKETITIAYDPDKAEKVFKMIAFDIGVKGKLTLNGSTCVFNITE
+  pTM: 0.4094
+  Score: -5.0807 | ddG: 5.081 kcal/mol
+
+--- Step 16 Partial Sequences ---
+[Candidate 1] Partial Sequence: ATYKLILYGKFLKGETITDAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 2] Partial Sequence: ATYKLILYGKFLKIETITNAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 3] Partial Sequence: ATYKLILYGKFLKIETITGAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 4] Partial Sequence: ATYKLILYGKFLKKETITNAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 5] Partial Sequence: ATYKLILYGKFLKTETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 6] Partial Sequence: ATYKLILYGKFLKTETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 7] Partial Sequence: ATYKLILYGKFLKPETITKAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 8] Partial Sequence: ATYKLILYGKFLKQETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 9] Partial Sequence: ATYKLILYGKFLKTETITLAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 10] Partial Sequence: ATYKLILYGKFLKTETITFAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 11] Partial Sequence: ATYKLILYGKFLKFETITKAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 12] Partial Sequence: ATYKLILYGKFLKKETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 13] Partial Sequence: ATYKLILYGKFLKGETITVAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 14] Partial Sequence: ATYKLILYGKFLKLETITVAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 15] Partial Sequence: ATYKLILYGKFLKPETITTAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 16] Partial Sequence: ATYKLILYGKFLKGETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 17] Partial Sequence: ATYKLILYGKFLKEETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 18] Partial Sequence: ATYKLILYGKFLKIETITTAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 19] Partial Sequence: ATYKLILYGKFLKRETITPAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+[Candidate 20] Partial Sequence: ATYKLILYGKFLKGETITSAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+
+--- Step 16 Denoised Results ---
+
+[Candidate 1]
+  Denoised Sequence: ATYKLILYGKFLKGETITDAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.5293
+  Score: -2.0403 | ddG: 2.040 kcal/mol
+
+[Candidate 2]
+  Denoised Sequence: ATYKLILYGKFLKIETITNAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.5494
+  Score: -4.9209 | ddG: 4.921 kcal/mol
+
+[Candidate 3]
+  Denoised Sequence: ATYKLILYGKFLKIETITGAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.4445
+  Score: -6.1249 | ddG: 6.125 kcal/mol
+
+[Candidate 4]
+  Denoised Sequence: ATYKLILYGKFLKKETITNAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.5111
+  Score: -4.3202 | ddG: 4.320 kcal/mol
+
+[Candidate 5]
+  Denoised Sequence: ATYKLILYGKFLKTETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.3541
+  Score: -4.5491 | ddG: 4.549 kcal/mol
+
+[Candidate 6]
+  Denoised Sequence: ATYKLILYGKFLKTETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.3541
+  Score: -4.5491 | ddG: 4.549 kcal/mol
+
+[Candidate 7]
+  Denoised Sequence: ATYKLILYGKFLKPETITKAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.4822
+  Score: -9.1056 | ddG: 9.106 kcal/mol
+
+[Candidate 8]
+  Denoised Sequence: ATYKLILYGKFLKQETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.3737
+  Score: -4.8513 | ddG: 4.851 kcal/mol
+
+[Candidate 9]
+  Denoised Sequence: ATYKLILYGKFLKTETITLAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.3452
+  Score: -4.7206 | ddG: 4.721 kcal/mol
+
+[Candidate 10]
+  Denoised Sequence: ATYKLILYGKFLKTETITFAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.3809
+  Score: -3.8974 | ddG: 3.897 kcal/mol
+
+[Candidate 11]
+  Denoised Sequence: ATYKLILYGKFLKFETITKAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.6113
+  Score: -5.5515 | ddG: 5.552 kcal/mol
+
+[Candidate 12]
+  Denoised Sequence: ATYKLILYGKFLKKETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.3661
+  Score: -4.0233 | ddG: 4.023 kcal/mol
+
+[Candidate 13]
+  Denoised Sequence: ATYKLILYGKFLKGETITVAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.3551
+  Score: -1.5449 | ddG: 1.545 kcal/mol
+
+[Candidate 14]
+  Denoised Sequence: ATYKLILYGKFLKLETITVAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.3796
+  Score: -6.7103 | ddG: 6.710 kcal/mol
+
+[Candidate 15]
+  Denoised Sequence: ATYKLILYGKFLKPETITTAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.5106
+  Score: -9.3792 | ddG: 9.379 kcal/mol
+
+[Candidate 16]
+  Denoised Sequence: ATYKLILYGKFLKGETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.3539
+  Score: -0.9617 | ddG: 0.962 kcal/mol
+
+[Candidate 17]
+  Denoised Sequence: ATYKLILYGKFLKEETITIAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.3640
+  Score: -4.4782 | ddG: 4.478 kcal/mol
+
+[Candidate 18]
+  Denoised Sequence: ATYKLILYGKFLKIETITTAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.4999
+  Score: -4.8177 | ddG: 4.818 kcal/mol
+
+[Candidate 19]
+  Denoised Sequence: ATYKLILYGKFLKRETITPAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.4813
+  Score: -4.4468 | ddG: 4.447 kcal/mol
+
+[Candidate 20]
+  Denoised Sequence: ATYKLILYGKFLKGETITSAYDPDKAEKVFKMIAFDHGVKGKLTLNGSTCVFNITE
+  pTM: 0.4445
+  Score: -3.3972 | ddG: 3.397 kcal/mol
+
+
+===================================
+    FINAL OPTIMIZED RESULT 
+===================================
+Optimized Sequence:
+ATYKLILYGKFLKGETITLALDPDKAEKVFKMLAFDLGVKGKLTLNGSTCVFNITE
+
+
+
+Final Score (=-ΔΔG): 0.5234
+Final FoldX ΔΔG vs. Wild-Type: -0.5234 kcal/mol
+===================================

@@ -1,0 +1,182 @@
+# Protein Understanding and Design Using Guided Generation
+<!-- [Link to the paper](https://dl.acm.org/doi/full/10.1145/3708035.3736022) -->
+
+
+## **Introduction**
+
+
+<!-- **Submitted to "ACM PEARC (Practice & Experience in Advanced Research Computing) conference 2025"** -->
+
+Guided generation in protein design and engineering allows using external information to steer the output of a generative model towards specific biological or functional goals. PLMs often struggle to generate sequences with specific, desired properties that are not strongly represented in the training data. 
+
+This repository contains a Python-based framework for computational protein design that uses **ESM3's guided generation** capabilities to refine protein sequences, optimizing for structural stability as predicted by the **FoldX** energy function.
+
+The primary goal of this tool is to take a wild-type protein structure and redesign a user-defined portion of its sequence to discover novel variants with enhanced stability ($ΔΔG$). The code is customizable to include other protein properties in the guided-generation custom-scoring function. 
+
+![](results/overview.png)
+
+
+
+## **Folder Structure**
+
+```
+ESM3-Guided-Generation-Based-Protein-Engineering
+│
+└─── data                  <- folder to keep the respective protein data bank and crystallographic information file       
+│        │ 
+│        └───cif           
+│        └───pdb
+│        
+└───ESM_Cookbook           <- experimental notebooks provided by ESM for testing purposes                             
+│
+└───result                 <- folder to store the plots and obtained results
+│
+└───foldx                  <- folder to store pdb files, foldx generated repaired files, foldx binary, and rotabase.txt
+│
+└───logs                   <- folder to store the generated log from experiments, it includes all information and processes.                           
+│
+└───src                    <- main source folder
+│    │ 
+│    └───notebooks         <- includes file to convert cif to pdb, analyzing pdb files, and code to generate plots from log file                   
+│    │      │ 
+│    │      └───ciftopdb.ipynb
+│    │      └───PDB_analysis.ipynb
+│    │      └───plot.ipynb
+│    │  
+│    └───esm_foldx_guidedgeneration                  
+│           │ 
+│           └───guided_generation.py            <- derivative-free guided generation, parallel foldx run
+│           └───main.py                         <- main python file 
+│           └───scoring_utils.py                <- pdb parsing, foldx call, foldx scorer
+│           └───guided_generation.sh            <- sample batch script to run on an HPC cluster using Slurm
+│     
+└───.gitignore
+└───environment.yml
+└───pyproject.toml
+└───LICENSE
+└───README.md
+└───setup.py
+    
+```
+## **Features**
+* **Guided Design:** Leverages the state-of-the-art ESM3 protein language model to intelligently generate new sequence variants.
+* **Stability Scoring:** Uses the physically-grounded FoldX energy function to score the stability of each generated candidate.
+* **Proportional Unmasking:** Employs an adaptive unmasking schedule that makes large changes initially and fine-tunes the sequence in later steps.
+* **Parallel Processing:** Significantly accelerates the scoring of candidates by running multiple FoldX instances in parallel.
+* **Automated Workflow:** A single script handles PDB repair, sequence masking, iterative generation, scoring, and results visualization.
+
+## **Methodology**
+
+The design process is an iterative, guided search that can be thought of as a **Design-Build-Test** cycle performed entirely *in silico*.
+
+## **Installation and Setup**
+
+This framework is designed for a Linux-based environment with CPU/GPU acceleration.
+
+```bash
+pip install esm_foldx_guidedgeneration
+
+```
+
+### **System Requirements**
+
+* **Operating System:** Linux (tested on NERSC Perlmutter Custom Linux-based kernel)
+* **Processor:** Modern multi-core CPU (8+ cores recommended for parallel scoring)
+* **Memory (RAM):** 64 GB or more recommended
+* **GPU:** NVIDIA GPU with CUDA support (16GB+ VRAM recommended for the 15B ESM3 model)
+
+### **Dependencies**
+
+This project relies on several key pieces of software.
+
+1.  **Python & Conda:** Python 3.8+ is required. It is highly recommended to manage the environment using Conda.
+
+2.  **FoldX Modeling Suite:** This package calls the FoldX executable to perform stability calculations.
+    * **Obtain a FoldX License:** Request a free academic license from the [FoldX website](http://foldxsuite.crg.eu/).
+    * **Download FoldX:** After receiving your license, download the **Linux version** of the FoldX executable.
+    * **Set Up `foldx` Directory:**
+        * In the root of this repository, create a directory named `foldx`.
+        * Place the `foldx` executable and the `rotabase.txt` file inside this `foldx` directory.
+        * Place the pdb files inside the `foldx` directory.
+
+3.  **Python Libraries:** All required Python libraries and their specific versions are listed in the `environment.yml` file. Key dependencies include:
+    * `pytorch`
+    * `esm`
+    * `pandas`
+    * `matplotlib` & `seaborn`
+
+4.  **Hugging Face Account:** The ESM3 model is a gated model and requires a Hugging Face account for access.
+
+
+### **Environment Setup**
+
+1.  **Log in to Hugging Face:**
+    Before setting up the environment, you must authenticate with Hugging Face.
+    * Go to the [ESM3 model page](https://huggingface.co/EvolutionaryScale/esm3-sm-open-v1) and accept the terms of use.
+    * Go to your [Hugging Face tokens page](https://huggingface.co/settings/tokens), generate a new **read** token, and copy it.
+    * In your terminal, run the login command and paste your token when prompted:
+      ```bash
+      huggingface-cli login
+      ```
+
+2.  **Create the Conda Environment:**
+    You can recreate the necessary Conda environment using the provided file. This will install all the required Python packages.
+    ```bash
+    # Create the conda environment from the file
+    conda env create -f environment.yml
+
+    # Activate the new environment
+    conda activate proteinenv
+    ```
+
+### **Local Package Installation**
+
+To make the scripts callable from anywhere, install the package in "editable" mode. From the root of the repository, run:
+
+```bash
+pip install -e .
+```
+---
+## **Usage**
+
+The main script can be run from the command line. You must provide a PDB filename, chain ID, and masking percentage.
+
+```bash
+python src/original_source_files/main.py --pdb_filename "1fbm.pdb" --chain_id "A" --masking_percentage 0.4 --num_decoding_steps 32 --num_samples_per_step 20 --num_workers 20
+```
+1. Change the `masking_percentage` based on the protein residue, if the residue is larger try to give a smaller `masking_percentage`, for smaller residue `0.4-0.5` works perfect. For the `num_decoding_steps` and `num_samples_per_step` give the value based on the no of iterations desired for the optimization process. `num_workers` value will be same as `num_samples_per_step` for performing simultaneous `foldx` call in parallel. 
+
+2. Results, including log files and plots of the $ΔΔG$ trajectory, will be saved in the `logs/` and `results/` directories.
+
+To run using a HPC system like Perlmutter, Can use the `guided_generation.sh` file provided.
+```bash
+sbatch guided_generation.sh
+```
+
+Make sure to change the `#SBATCH --array=0-1` for the number of pdb file submitting for the job. 
+
+ 
+
+## **License**
+
+This project is licensed under the [Apache License](LICENSE).
+
+
+
+## **Acknowledgments**
+
+This is a summer internship work at NERSC from June 2025 - September 2025
+
+1. **Perlmutter Supercomputer**
+3. **Lawrence Berkeley National Laboratory**
+4. **National Energy Research Scientific Computing Center**
+5. **ai4protein group**
+6. **University of California San Diego (Boolean Lab)**
+
+
+
+
+
+
+
+
