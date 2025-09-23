@@ -43,13 +43,19 @@ ESM3-Guided-Generation-Based-Protein-Engineering
 │    │      └───PDB_analysis.ipynb
 │    │      └───plot.ipynb
 │    │  
-│    └───esm_foldx_guidedgeneration                  
+│    └───esm_foldx_guidedgeneration             <- used to build a pypi package               
+│    │      │ 
+│    │      └───guided_generation.py            <- derivative-free guided generation, parallel foldx run
+│    │      └───main.py                         <- main python file 
+│    │      └───scoring_utils.py                <- pdb parsing, foldx call, foldx scorer
+│    │      └───guided_generation.sh            <- sample batch script to run on an HPC cluster using Slurm
+│    │ 
+│    └───original_source_files                  <- original source code
 │           │ 
 │           └───guided_generation.py            <- derivative-free guided generation, parallel foldx run
 │           └───main.py                         <- main python file 
 │           └───scoring_utils.py                <- pdb parsing, foldx call, foldx scorer
 │           └───guided_generation.sh            <- sample batch script to run on an HPC cluster using Slurm
-│     
 └───.gitignore
 └───environment.yml
 └───pyproject.toml
@@ -86,7 +92,7 @@ pip install esm_foldx_guidedgeneration
 * **Operating System:** Linux (tested on NERSC Perlmutter Custom Linux-based kernel)
 * **Processor:** Modern multi-core CPU (8+ cores recommended for parallel scoring)
 * **Memory (RAM):** 64 GB or more recommended
-* **GPU:** NVIDIA GPU with CUDA support (16GB+ VRAM recommended for the 15B ESM3 model)
+* **GPU:** NVIDIA GPU with CUDA support (16GB+ VRAM recommended for the 1.4B ESM3 model)
 
 ### **Dependencies**
 
@@ -156,15 +162,14 @@ To run using a HPC system like Perlmutter, Can use the `guided_generation.sh` fi
 sbatch guided_generation.sh
 ```
 
-Make sure to change the `#SBATCH --array=0-1` for the number of pdb file submitting for the job. 
+Make sure to change the `#SBATCH --array=0-1` for the number of pdb file submitting for the job. The script is designed to take multiple protein `.pdb` file as input. 
 
 To run after installing the package:
 
 ```bash
 esm_foldx_guidedgeneration --pdb_filename "1fbm.pdb" --chain_id "A" --masking_percentage 0.4 --num_decoding_steps 32 --num_samples_per_step 20 --num_workers 20
-
 ```
-
+Make sure to create the foldx directory and add the necessary pdb files, place the `foldx` executable and the `rotabase.txt` file inside this `foldx` directory.
  
 
 ## **License**
