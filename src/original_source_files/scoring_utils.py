@@ -82,40 +82,6 @@ def get_foldx_mutation_string(candidate_seq: str, wt_seq: str, chain_id: str, se
         if wt_aa != mut_aa: mutations.append(f"{wt_aa}{chain_id}{seq_to_pdb_map[i]}{mut_aa}")
     return ",".join(mutations) + ";" if mutations else ";"
 
-# def compute_ddg_with_foldx(
-#     seq: str, wt_seq: str, chain_id: str, seq_to_pdb_map: List[str],
-#     repaired_pdb_path: str, foldx_exec: str, foldx_workdir: str, cache_dir: str,
-#     number_of_runs: int, timeout_sec: int, cleanup_tmp: bool, verbose_foldx: bool
-# ) -> Optional[float]:
-#     import joblib
-#     # MODIFIED: Passes cache_dir to get_cache_path
-#     cache_path = get_cache_path(seq, cache_dir)
-#     if os.path.exists(cache_path): return joblib.load(cache_path)
-    
-#     mutation_str = get_foldx_mutation_string(seq, wt_seq, chain_id, seq_to_pdb_map)
-#     if not mutation_str or mutation_str == ";": return 0.0
-    
-#     tmp_dir = os.path.join(foldx_workdir, f"foldx_run_{uuid.uuid4().hex[:8]}")
-#     os.makedirs(tmp_dir)
-#     ddg = None
-#     try:
-#         repaired_base = os.path.basename(repaired_pdb_path)
-#         shutil.copy2(repaired_pdb_path, os.path.join(tmp_dir, repaired_base))
-#         shutil.copy2(os.path.join(foldx_workdir, "rotabase.txt"), tmp_dir)
-#         with open(os.path.join(tmp_dir, "individual_list.txt"), "w") as f: f.write(mutation_str + "\n")
-#         cmd = [foldx_exec, "--command=BuildModel", f"--pdb={repaired_base}", "--mutant-file=individual_list.txt", f"--numberOfRuns={number_of_runs}"]
-#         proc = subprocess.run(cmd, cwd=tmp_dir, capture_output=True, text=True, timeout=timeout_sec)
-#         if verbose_foldx: print(f"\n--- FOLDX Log for {seq[:10]}... ---\nSTDOUT:\n{proc.stdout}\nSTDERR:\n{proc.stderr}\n---------------------\n")
-#         if proc.returncode == 0:
-#             avg_fxout = os.path.join(tmp_dir, f"Average_{os.path.splitext(repaired_base)[0]}.fxout")
-#             ddg = parse_ddg_from_fxout(avg_fxout)
-#     except Exception: pass
-#     finally:
-#         if cleanup_tmp: shutil.rmtree(tmp_dir, ignore_errors=True)
-#     if ddg is not None: joblib.dump(ddg, cache_path)
-#     return ddg
-
-# for reporting the foldx output to log
 
 def compute_ddg_with_foldx(
     seq: str, wt_seq: str, chain_id: str, seq_to_pdb_map: List[str],
@@ -162,55 +128,7 @@ def compute_ddg_with_foldx(
     if ddg is not None: joblib.dump(ddg, cache_path)
     return ddg
 
-# class FoldXScorer(GuidedDecodingScoringFunction):
-#     # MODIFIED: __init__ now accepts **kwargs to catch all extra settings
-#     def __init__(self, wt_seq, chain_id, seq_to_pdb_map, repaired_pdb_path, **kwargs):
-#         self.wt_seq = wt_seq
-#         self.chain_id = chain_id
-#         self.seq_to_pdb_map = seq_to_pdb_map
-#         self.repaired_pdb_path = repaired_pdb_path
-#         self.kwargs = kwargs # Store all other foldx settings
-    
-#     # MODIFIED: __call__ now passes the stored settings along to the compute function
-#     def __call__(self, protein: ESMProtein) -> float:
-#         ddg = compute_ddg_with_foldx(
-#             protein.sequence, self.wt_seq, self.chain_id, self.seq_to_pdb_map, self.repaired_pdb_path, **self.kwargs
-#         )
-#         if ddg is None: return float("-inf")
-#         score = -float(ddg)
-#         return score
 
-
-
-# class FoldXScorer(GuidedDecodingScoringFunction):
-#     def __init__(self, wt_seq, chain_id, seq_to_pdb_map, repaired_pdb_path, **kwargs):
-#         self.wt_seq = wt_seq
-#         self.chain_id = chain_id
-#         self.seq_to_pdb_map = seq_to_pdb_map
-#         self.repaired_pdb_path = repaired_pdb_path
-#         self.kwargs = kwargs
-#         # NEW: Define the set of invalid characters
-#         self.invalid_amino_acids = {'B', 'J', 'O', 'U', 'X', 'Z'}
-    
-#     def __call__(self, protein: ESMProtein) -> float:
-#         sequence = protein.sequence
-
-#         # MODIFIED: Expanded check for any invalid character
-#         if any(char in self.invalid_amino_acids for char in sequence):
-#             print(f"[SCORE] Invalid sequence with non-standard amino acid found. Score: -inf")
-#             return float("-inf")
-
-#         # The rest of the function is the same
-#         ddg = compute_ddg_with_foldx(
-#             sequence, self.wt_seq, self.chain_id, self.seq_to_pdb_map, self.repaired_pdb_path, **self.kwargs
-#         )
-#         if ddg is None: 
-#             return float("-inf")
-            
-#         score = -float(ddg)
-#         return score
-
-# for reporting the foldx output to log
 
 class FoldXScorer(GuidedDecodingScoringFunction):
     def __init__(self, wt_seq, chain_id, seq_to_pdb_map, repaired_pdb_path, **kwargs):
