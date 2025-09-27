@@ -10,6 +10,7 @@ Classifier: License :: OSI Approved :: Apache Software License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: torch
 Requires-Dist: pandas
 Requires-Dist: seaborn
@@ -24,6 +25,7 @@ Dynamic: classifier
 Dynamic: description
 Dynamic: description-content-type
 Dynamic: home-page
+Dynamic: license-file
 Dynamic: requires-dist
 Dynamic: requires-python
 Dynamic: summary
@@ -35,15 +37,13 @@ Dynamic: summary
 ## **Introduction**
 
 
-<!-- **Submitted to "ACM PEARC (Practice & Experience in Advanced Research Computing) conference 2025"** -->
-
 Guided generation in protein design and engineering allows using external information to steer the output of a generative model towards specific biological or functional goals. PLMs often struggle to generate sequences with specific, desired properties that are not strongly represented in the training data. 
 
 This repository contains a Python-based framework for computational protein design that uses **ESM3's guided generation** capabilities to refine protein sequences, optimizing for structural stability as predicted by the **FoldX** energy function.
 
 The primary goal of this tool is to take a wild-type protein structure and redesign a user-defined portion of its sequence to discover novel variants with enhanced stability ($ΔΔG$). The code is customizable to include other protein properties in the guided-generation custom-scoring function. 
 
-![](results/overview.png)
+![](results/workflow.svg)
 
 
 
@@ -57,13 +57,15 @@ ESM3-Guided-Generation-Based-Protein-Engineering
 │        └───cif           
 │        └───pdb
 │        
-└───ESM_Cookbook           <- experimental notebooks provided by ESM for testing purposes                             
+└───ESM_Cookbook           <- experimental notebooks provided by ESM for testing purposes
+│
+└───dist                   <- pypi build package                            
 │
 └───result                 <- folder to store the plots and obtained results
 │
-└───foldx                  <- folder to store pdb files, foldx generated repaired files, foldx binary, and rotabase.txt
+└───foldx                  <- folder to store pdb files, foldx-generated repaired files, foldx binary, and rotabase.txt
 │
-└───logs                   <- folder to store the generated log from experiments, it includes all information and processes.                           
+└───logs                   <- folder to store the generated log from experiments, which includes all information and processes.                           
 │
 └───src                    <- main source folder
 │    │ 
@@ -73,13 +75,12 @@ ESM3-Guided-Generation-Based-Protein-Engineering
 │    │      └───PDB_analysis.ipynb
 │    │      └───plot.ipynb
 │    │  
-│    └───esm_foldx_guidedgeneration                  
-│           │ 
+│    └───esm_foldx_guidedgeneration             <- installable Python package
+│           │
 │           └───guided_generation.py            <- derivative-free guided generation, parallel foldx run
-│           └───main.py                         <- main python file 
+│           └───main.py                         <- main python entry point
 │           └───scoring_utils.py                <- pdb parsing, foldx call, foldx scorer
 │           └───guided_generation.sh            <- sample batch script to run on an HPC cluster using Slurm
-│     
 └───.gitignore
 └───environment.yml
 └───pyproject.toml
@@ -89,7 +90,7 @@ ESM3-Guided-Generation-Based-Protein-Engineering
     
 ```
 ## **Features**
-* **Guided Design:** Leverages the state-of-the-art ESM3 protein language model to intelligently generate new sequence variants.
+* **Guided Design:** Leverages the state-of-the-art ESM3 protein language model to generate new sequence variants intelligently.
 * **Stability Scoring:** Uses the physically-grounded FoldX energy function to score the stability of each generated candidate.
 * **Proportional Unmasking:** Employs an adaptive unmasking schedule that makes large changes initially and fine-tunes the sequence in later steps.
 * **Parallel Processing:** Significantly accelerates the scoring of candidates by running multiple FoldX instances in parallel.
@@ -103,9 +104,12 @@ The design process is an iterative, guided search that can be thought of as a **
 
 This framework is designed for a Linux-based environment with CPU/GPU acceleration.
 
+To install the package directly from pip:
+
+https://pypi.org/project/esm-foldx-guidedgeneration/
+
 ```bash
 pip install esm_foldx_guidedgeneration
-
 ```
 
 ### **System Requirements**
@@ -113,7 +117,7 @@ pip install esm_foldx_guidedgeneration
 * **Operating System:** Linux (tested on NERSC Perlmutter Custom Linux-based kernel)
 * **Processor:** Modern multi-core CPU (8+ cores recommended for parallel scoring)
 * **Memory (RAM):** 64 GB or more recommended
-* **GPU:** NVIDIA GPU with CUDA support (16GB+ VRAM recommended for the 15B ESM3 model)
+* **GPU:** NVIDIA GPU with CUDA support (16GB+ VRAM recommended for the 1.4B ESM3 model)
 
 ### **Dependencies**
 
@@ -148,7 +152,16 @@ This project relies on several key pieces of software.
       ```bash
       huggingface-cli login
       ```
+    * To access larger ESM model:
 
+        ```bash
+        from getpass import getpass
+
+        from esm.sdk import client
+
+        token = getpass("Token from Forge console: ")
+        model = client(model="esm3-medium-2024-08", url="https://forge.evolutionaryscale.ai", token=token)
+        ```
 2.  **Create the Conda Environment:**
     You can recreate the necessary Conda environment using the provided file. This will install all the required Python packages.
     ```bash
@@ -172,7 +185,7 @@ pip install -e .
 The main script can be run from the command line. You must provide a PDB filename, chain ID, and masking percentage.
 
 ```bash
-python src/original_source_files/main.py --pdb_filename "1fbm.pdb" --chain_id "A" --masking_percentage 0.4 --num_decoding_steps 32 --num_samples_per_step 20 --num_workers 20
+python -m esm_foldx_guidedgeneration.main --pdb_filename "1PGA.pdb" --chain_id "A" --masking_percentage 0.4 --num_decoding_steps 32 --num_samples_per_step 20 --num_workers 20
 ```
 1. Change the `masking_percentage` based on the protein residue, if the residue is larger try to give a smaller `masking_percentage`, for smaller residue `0.4-0.5` works perfect. For the `num_decoding_steps` and `num_samples_per_step` give the value based on the no of iterations desired for the optimization process. `num_workers` value will be same as `num_samples_per_step` for performing simultaneous `foldx` call in parallel. 
 
@@ -183,8 +196,14 @@ To run using a HPC system like Perlmutter, Can use the `guided_generation.sh` fi
 sbatch guided_generation.sh
 ```
 
-Make sure to change the `#SBATCH --array=0-1` for the number of pdb file submitting for the job. 
+Make sure to change the `#SBATCH --array=0-1` for the number of pdb file submitting for the job. The script is designed to take multiple protein `.pdb` file as input. 
 
+To run after installing the package:
+
+```bash
+esm_foldx_guidedgeneration --pdb_filename "1PGA.pdb" --chain_id "A" --masking_percentage 0.4 --num_decoding_steps 32 --num_samples_per_step 20 --num_workers 20
+```
+Make sure to create the foldx directory and add the necessary pdb files, place the `foldx` executable and the `rotabase.txt` file inside this `foldx` directory.
  
 
 ## **License**
@@ -195,16 +214,39 @@ This project is licensed under the [Apache License](LICENSE).
 
 ## **Acknowledgments**
 
-This is a summer internship work at NERSC from June 2025 - September 2025
+**This is a summer internship work at NERSC from June 2025 to September 2025.**
 
 1. **Perlmutter Supercomputer**
 3. **Lawrence Berkeley National Laboratory**
 4. **National Energy Research Scientific Computing Center**
 5. **ai4protein group**
 6. **University of California San Diego (Boolean Lab)**
+7. **Anna Su (Yale University)**
+8. **ESM Github (Code / Weights)**
+    ```@software{evolutionaryscale_2024,
+    author = {{EvolutionaryScale Team}},
+    title = {evolutionaryscale/esm},
+    year = {2024},
+    publisher = {Zenodo},
+    doi = {10.5281/zenodo.14219303},
+    URL = {https://doi.org/10.5281/zenodo.14219303}}
+    ```
 
 
+## **Citation**
 
+If you use this work in your research, please cite it as follows:
+
+```bibtex
+@software{Nanda_esm_foldx_guidedgeneration_2025,
+  author = {Amitash Nanda, Steven Farrell, Nabin Giri },
+  title = {{ESM-FoldX Guided Generation: A Framework for Protein Understanding and Design Using Guided Generation}},
+  year = {2025},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  url = {https://github.com/amitashnanda/ESM3-Guided-Generation-Based-Protein-Engineering}
+}
+```
 
 
 
