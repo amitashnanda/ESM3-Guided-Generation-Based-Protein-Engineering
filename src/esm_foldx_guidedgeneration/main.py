@@ -85,7 +85,7 @@ def main():
         "--masking_percentage",
         type=float,
         default=0.40,
-        help="Percentage of non-frozen residues to mask (e.g., 0.4 for 40%)."
+        help="Percentage of non-frozen residues to mask (e.g., 0.4 for 40%%)."
     )
 
     parser.add_argument(
