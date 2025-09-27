@@ -35,8 +35,11 @@ except RuntimeError:
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # --- Path and Execution Settings ---
-FOLDX_EXEC     = "/pscratch/sd/a/ananda/ESM3-Guided-Generation-Based-Protein-Engineering/foldx/foldx_20251231"
-FOLDX_WORKDIR  = "/pscratch/sd/a/ananda/ESM3-Guided-Generation-Based-Protein-Engineering/foldx"
+_base_path = os.path.expandvars("$SCRATCH/esm3-gen/foldx")
+FOLDX_WORKDIR = os.path.expandvars(os.environ.get("FOLDX_WORKDIR", _base_path))
+FOLDX_EXEC    = os.path.expandvars(os.environ.get("FOLDX_EXEC", os.path.join(_base_path, "foldx_20251231")))
+#FOLDX_EXEC     = "/pscratch/sd/a/ananda/ESM3-Guided-Generation-Based-Protein-Engineering/foldx/foldx_20251231"
+#FOLDX_WORKDIR  = "/pscratch/sd/a/ananda/ESM3-Guided-Generation-Based-Protein-Engineering/foldx"
 
 # --- Protein and Masking Settings to test for individual protein without batch job ---
 
