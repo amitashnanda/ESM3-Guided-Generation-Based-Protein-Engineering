@@ -3,3 +3,6 @@ foldx/foldx*
 
 # Ignore the rotabase file
 foldx/rotabase.txt
+
+__pycache__
+*.egg-info
