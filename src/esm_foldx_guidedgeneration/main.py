@@ -105,10 +105,13 @@ def main():
         "--num_workers", type=int, default=20, help="Number of parallel workers for FoldX scoring."
     )
     parser.add_argument(
-        "--log_dir",
+        "--log_file",
         type=str,
-        default=DEFAULT_LOG_DIR,
-        help="Directory where generation logs will be stored.",
+        default=None,
+        help=(
+            "Path to the generation log file. Defaults to a timestamped file inside the"
+            " standard logs directory if not provided."
+        ),
     )
 
     
@@ -120,7 +123,7 @@ def main():
     NUM_DECODING_STEPS = args.num_decoding_steps
     NUM_SAMPLES_PER_STEP = args.num_samples_per_step
     NUM_WORKERS = args.num_workers
-    log_dir = args.log_dir
+    log_file = args.log_file
 
 
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -162,9 +165,15 @@ def main():
     
     # --- Setup the Log File ---
     timestamp = time.strftime("%Y%m%d_%H%M%S")
-    log_filename = f"generation_log_{timestamp}.txt"
-    os.makedirs(log_dir, exist_ok=True)
-    log_filepath = os.path.join(log_dir, log_filename)
+    if log_file:
+        log_filepath = log_file
+    else:
+        log_filepath = os.path.join(
+            DEFAULT_LOG_DIR, f"generation_log_{timestamp}.txt"
+        )
+
+    log_dirname = os.path.dirname(log_filepath) or "."
+    os.makedirs(log_dirname, exist_ok=True)
     print(f"[INFO] All generated sequences will be saved to: {log_filepath}")
 
     header_text = (
