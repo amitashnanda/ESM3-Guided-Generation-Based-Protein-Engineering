@@ -47,7 +47,7 @@ conda activate /global/common/software/nintern/ananda/proteinenv
 cd /pscratch/sd/a/ananda/protein_ai/src/
 
 
-srun python main.py --pdb_filename "$CURRENT_PDB" --chain_id "$CURRENT_CHAIN" --masking_percentage "$CURRENT_MASK" --num_decoding_steps "$CURRENT_STEPS" --num_samples_per_step "$CURRENT_SAMPLES" --num_workers "$CURRENT_WORKERS"
+srun python -m esm_foldx_guidedgeneration.main --pdb_filename "$CURRENT_PDB" --chain_id "$CURRENT_CHAIN" --masking_percentage "$CURRENT_MASK" --num_decoding_steps "$CURRENT_STEPS" --num_samples_per_step "$CURRENT_SAMPLES" --num_workers "$CURRENT_WORKERS"
 
 echo "========================================================"
 echo "FINISHED JOB: ${SLURM_JOB_ID}, ARRAY_TASK: ${SLURM_ARRAY_TASK_ID}"

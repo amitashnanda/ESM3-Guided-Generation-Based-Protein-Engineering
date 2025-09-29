@@ -35,8 +35,11 @@ except RuntimeError:
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # --- Path and Execution Settings ---
-FOLDX_EXEC     = "/pscratch/sd/a/ananda/ESM3-Guided-Generation-Based-Protein-Engineering/foldx/foldx_20251231"
-FOLDX_WORKDIR  = "/pscratch/sd/a/ananda/ESM3-Guided-Generation-Based-Protein-Engineering/foldx"
+_base_path = os.path.expandvars("$SCRATCH/esm3-gen/foldx")
+FOLDX_WORKDIR = os.path.expandvars(os.environ.get("FOLDX_WORKDIR", _base_path))
+FOLDX_EXEC    = os.path.expandvars(os.environ.get("FOLDX_EXEC", os.path.join(_base_path, "foldx_20251231")))
+#FOLDX_EXEC     = "/pscratch/sd/a/ananda/ESM3-Guided-Generation-Based-Protein-Engineering/foldx/foldx_20251231"
+#FOLDX_WORKDIR  = "/pscratch/sd/a/ananda/ESM3-Guided-Generation-Based-Protein-Engineering/foldx"
 
 # --- Protein and Masking Settings to test for individual protein without batch job ---
 
@@ -61,7 +64,11 @@ NUMBER_OF_RUNS = 1
 TIMEOUT_SEC    = 1800
 CLEANUP_TMP    = True 
 CACHE_DIR      = os.path.join(FOLDX_WORKDIR, "foldx_cache")
-VERBOSE_FOLDX  = False 
+VERBOSE_FOLDX  = False
+
+DEFAULT_LOG_DIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..", "logs")
+)
 
 USE_STARTING_MUTATIONS = False
 STARTING_MUTATIONS = { 10: "F", 25: "Y", 30: "W", 41: "I", 55: "R" }
@@ -85,7 +92,7 @@ def main():
         "--masking_percentage",
         type=float,
         default=0.40,
-        help="Percentage of non-frozen residues to mask (e.g., 0.4 for 40%)."
+        help="Percentage of non-frozen residues to mask (e.g., 0.4 for 40%%)."
     )
 
     parser.add_argument(
@@ -97,6 +104,15 @@ def main():
     parser.add_argument(
         "--num_workers", type=int, default=20, help="Number of parallel workers for FoldX scoring."
     )
+    parser.add_argument(
+        "--log_file",
+        type=str,
+        default=None,
+        help=(
+            "Path to the generation log file. Defaults to a timestamped file inside the"
+            " standard logs directory if not provided."
+        ),
+    )
 
     
     args = parser.parse_args()
@@ -107,6 +123,7 @@ def main():
     NUM_DECODING_STEPS = args.num_decoding_steps
     NUM_SAMPLES_PER_STEP = args.num_samples_per_step
     NUM_WORKERS = args.num_workers
+    log_file = args.log_file
 
 
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -148,10 +165,15 @@ def main():
     
     # --- Setup the Log File ---
     timestamp = time.strftime("%Y%m%d_%H%M%S")
-    log_filename = f"generation_log_{timestamp}.txt"
-    log_dir = "../../logs"
-    os.makedirs(log_dir, exist_ok=True)
-    log_filepath = os.path.join(log_dir, log_filename)
+    if log_file:
+        log_filepath = log_file
+    else:
+        log_filepath = os.path.join(
+            DEFAULT_LOG_DIR, f"generation_log_{timestamp}.txt"
+        )
+
+    log_dirname = os.path.dirname(log_filepath) or "."
+    os.makedirs(log_dirname, exist_ok=True)
     print(f"[INFO] All generated sequences will be saved to: {log_filepath}")
 
     header_text = (

@@ -43,17 +43,10 @@ ESM3-Guided-Generation-Based-Protein-Engineering
 │    │      └───PDB_analysis.ipynb
 │    │      └───plot.ipynb
 │    │  
-│    └───esm_foldx_guidedgeneration             <- used to build a pypi package               
-│    │      │ 
-│    │      └───guided_generation.py            <- derivative-free guided generation, parallel foldx run
-│    │      └───main.py                         <- main python file 
-│    │      └───scoring_utils.py                <- pdb parsing, foldx call, foldx scorer
-│    │      └───guided_generation.sh            <- sample batch script to run on an HPC cluster using Slurm
-│    │ 
-│    └───original_source_files                  <- original source code
-│           │ 
+│    └───esm_foldx_guidedgeneration             <- installable Python package
+│           │
 │           └───guided_generation.py            <- derivative-free guided generation, parallel foldx run
-│           └───main.py                         <- main python file 
+│           └───main.py                         <- main python entry point
 │           └───scoring_utils.py                <- pdb parsing, foldx call, foldx scorer
 │           └───guided_generation.sh            <- sample batch script to run on an HPC cluster using Slurm
 └───.gitignore
@@ -160,7 +153,7 @@ pip install -e .
 The main script can be run from the command line. You must provide a PDB filename, chain ID, and masking percentage.
 
 ```bash
-python src/original_source_files/main.py --pdb_filename "1PGA.pdb" --chain_id "A" --masking_percentage 0.4 --num_decoding_steps 32 --num_samples_per_step 20 --num_workers 20
+python -m esm_foldx_guidedgeneration.main --pdb_filename "1PGA.pdb" --chain_id "A" --masking_percentage 0.4 --num_decoding_steps 32 --num_samples_per_step 20 --num_workers 20
 ```
 1. Change the `masking_percentage` based on the protein residue, if the residue is larger try to give a smaller `masking_percentage`, for smaller residue `0.4-0.5` works perfect. For the `num_decoding_steps` and `num_samples_per_step` give the value based on the no of iterations desired for the optimization process. `num_workers` value will be same as `num_samples_per_step` for performing simultaneous `foldx` call in parallel. 
 
