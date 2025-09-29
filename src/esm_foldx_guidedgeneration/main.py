@@ -64,7 +64,11 @@ NUMBER_OF_RUNS = 1
 TIMEOUT_SEC    = 1800
 CLEANUP_TMP    = True 
 CACHE_DIR      = os.path.join(FOLDX_WORKDIR, "foldx_cache")
-VERBOSE_FOLDX  = False 
+VERBOSE_FOLDX  = False
+
+DEFAULT_LOG_DIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..", "logs")
+)
 
 USE_STARTING_MUTATIONS = False
 STARTING_MUTATIONS = { 10: "F", 25: "Y", 30: "W", 41: "I", 55: "R" }
@@ -100,6 +104,12 @@ def main():
     parser.add_argument(
         "--num_workers", type=int, default=20, help="Number of parallel workers for FoldX scoring."
     )
+    parser.add_argument(
+        "--log_dir",
+        type=str,
+        default=DEFAULT_LOG_DIR,
+        help="Directory where generation logs will be stored.",
+    )
 
     
     args = parser.parse_args()
@@ -110,6 +120,7 @@ def main():
     NUM_DECODING_STEPS = args.num_decoding_steps
     NUM_SAMPLES_PER_STEP = args.num_samples_per_step
     NUM_WORKERS = args.num_workers
+    log_dir = args.log_dir
 
 
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -152,7 +163,6 @@ def main():
     # --- Setup the Log File ---
     timestamp = time.strftime("%Y%m%d_%H%M%S")
     log_filename = f"generation_log_{timestamp}.txt"
-    log_dir = "../../logs"
     os.makedirs(log_dir, exist_ok=True)
     log_filepath = os.path.join(log_dir, log_filename)
     print(f"[INFO] All generated sequences will be saved to: {log_filepath}")
