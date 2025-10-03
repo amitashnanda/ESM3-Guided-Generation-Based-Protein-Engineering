@@ -1,0 +1,1 @@
+boltz predict 1rnt.yaml --use_msa_server --out_dir 1rnt_out --sampling_steps 50 --sampling_steps_affinity 200
