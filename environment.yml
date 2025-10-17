@@ -251,7 +251,6 @@ dependencies:
   - zipp=3.23.0=pyhd8ed1ab_0
   - zstandard=0.23.0=py312h66e93f0_2
   - pip:
-      - boltz[cuda]
       - biopython==1.85
       - biotite==1.3.0
       - biotraj==1.2.2
