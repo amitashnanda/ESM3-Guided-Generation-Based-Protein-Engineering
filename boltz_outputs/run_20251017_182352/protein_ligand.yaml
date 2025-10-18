@@ -1,0 +1,11 @@
+version: 1
+sequences:
+  - protein:
+      id: A
+      sequence: 'ACNYTCGSNVYSSSQVDAYLATGYKLHEDGVTVGSNSYPHKYNNMEGFQFRVSSGYYEWPILDSGRTYSGGSPGADRVVFNENGILAGVILHYGASGNNFVECT'
+  - ligand:
+      id: B
+      smiles: 'NC1=Nc2n(cnc2C(=O)N1)[C@@H]3O[C@H](CO)[C@@H](O)[C@H]3O[P](O)(O)=O'
+properties:
+  - affinity:
+      binder: B
