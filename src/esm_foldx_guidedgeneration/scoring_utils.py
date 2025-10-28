@@ -11,7 +11,7 @@ import torch
 from tqdm import tqdm
 from esm.models.esm3 import ESM3
 from esm.sdk.api import ESMProtein, GenerationConfig
-from .guided_generation import ESM3GuidedDecoding, GuidedDecodingScoringFunction
+from guided_generation import ESM3GuidedDecoding, GuidedDecodingScoringFunction
 from multiprocessing import Pool, cpu_count, Manager
 from functools import partial
 import matplotlib.pyplot as plt

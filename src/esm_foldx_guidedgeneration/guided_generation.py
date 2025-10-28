@@ -98,7 +98,24 @@ class ESM3GuidedDecoding:
                         partial_protein = self.client.decode(tensor)
                         f.write(f"[Candidate {i+1}] Partial Sequence: {partial_protein.sequence}\n")
 
-            denoised_proteins = [self.predict_denoised(tensor, temperature=denoised_prediction_temperature) for tensor in candidate_tensors]
+            # denoised_proteins = [self.predict_denoised(tensor, temperature=denoised_prediction_temperature) for tensor in candidate_tensors]
+
+            # --- MODIFIED SECTION ---
+
+            # Create the proteins first
+            raw_denoised_proteins = [self.predict_denoised(tensor, temperature=denoised_prediction_temperature) for tensor in candidate_tensors]
+
+            denoised_proteins = []
+            for protein in raw_denoised_proteins:
+                detached_protein = ESMProtein(sequence=protein.sequence)
+                for attr_name, attr_value in vars(protein).items():
+                    if isinstance(attr_value, torch.Tensor):
+                        setattr(detached_protein, attr_name, attr_value.detach().clone()) 
+                    elif attr_name != 'sequence': 
+                         setattr(detached_protein, attr_name, attr_value) 
+                denoised_proteins.append(detached_protein)
+
+            # --- END MODIFIED SECTION ---
                    
             candidate_gen_duration = time.time() - candidate_gen_start_time
             print(f"[INFO] Candidate generation (GPU) finished in {candidate_gen_duration:.2f} seconds.")

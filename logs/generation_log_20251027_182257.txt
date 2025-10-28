@@ -1,0 +1,356 @@
+
+--- FOLDX Log for sequence SMKAFVAGTLVLTAK... ---
+STDOUT:
+   ********************************************
+   ***                                      ***
+   ***             FoldX 4 (c)              ***
+   ***                                      ***
+   ***     code by the FoldX Consortium     ***
+   ***                                      ***
+   ***     Jesper Borg, Frederic Rousseau   ***
+   ***    Joost Schymkowitz, Luis Serrano   ***
+   ***    Peter Vanhee, Erik Verschueren    ***
+   ***     Lies Baeten, Javier Delgado      ***
+   ***       and Francois Stricher          ***
+   *** and any other of the 9! permutations ***
+   ***   based on an original concept by    ***
+   ***   Raphael Guerois and Luis Serrano   ***
+   ********************************************
+
+1 models read: 2lwy_Repair.pdb
+Output: ./2lwy_Repair.log
+
+BackHbond       =               -79.47
+SideHbond       =               -29.74
+Energy_VdW      =               -150.17
+Electro         =               -2.93
+Energy_SolvP    =               194.22
+Energy_SolvH    =               -207.56
+Energy_vdwclash =               1.99
+energy_torsion  =               1.54
+backbone_vdwclash=              44.41
+Entropy_sidec   =               74.91
+Entropy_mainc   =               206.21
+water bonds     =               0.00
+helix dipole    =               0.00
+loop_entropy    =               0.00
+cis_bond        =               0.00
+disulfide       =               0.00
+kn electrostatic=               0.00
+partial covalent interactions = 0.00
+Energy_Ionisation =             0.72
+Entropy Complex =               0.00
+-----------------------------------------------------------
+Total          = 				  9.72
+
+Starting BuildModel
+Reading MA7L,IA8V,TA12K,IA20V,IA27Y,AA28S,RA47G,TA50K,HA54S,LA55I,TA56K,GA59D,FA66S,YA71W,KA73V,VA75K,FA77W,QA84K,VA96E,LA97V,KA102I,LA104K,IA106K,AA107L,KA117E,DA119Q,HA125F,DA128A,EA130R;
+Residue to Mutate META7 has residue index 10
+Residue to Mutate ILEA8 has residue index 11
+Residue to Mutate THRA12 has residue index 15
+Residue to Mutate ILEA20 has residue index 23
+Residue to Mutate ILEA27 has residue index 30
+Residue to Mutate ALAA28 has residue index 31
+Residue to Mutate ARGA47 has residue index 50
+Residue to Mutate THRA50 has residue index 53
+Residue to Mutate HISA54 has residue index 57
+Residue to Mutate LEUA55 has residue index 58
+Residue to Mutate THRA56 has residue index 59
+Residue to Mutate GLYA59 has residue index 62
+Residue to Mutate PHEA66 has residue index 69
+Residue to Mutate TYRA71 has residue index 74
+Residue to Mutate LYSA73 has residue index 76
+Residue to Mutate VALA75 has residue index 78
+Residue to Mutate PHEA77 has residue index 80
+Residue to Mutate GLNA84 has residue index 87
+Residue to Mutate VALA96 has residue index 99
+Residue to Mutate LEUA97 has residue index 100
+Residue to Mutate LYSA102 has residue index 105
+Residue to Mutate LEUA104 has residue index 107
+Residue to Mutate ILEA106 has residue index 109
+Residue to Mutate ALAA107 has residue index 110
+Residue to Mutate LYSA117 has residue index 120
+Residue to Mutate ASPA119 has residue index 122
+Residue to Mutate HISA125 has residue index 128
+Residue to Mutate ASPA128 has residue index 131
+Residue to Mutate GLUA130 has residue index 133
+Mutating residue = META7 into LEU
+Mutating residue = ILEA8 into VAL
+Mutating residue = ILEA20 into VAL
+Mutating residue = ILEA27 into TYR
+Mutating residue = ARGA47 into GLY
+Mutating residue = LEUA55 into ILE
+Mutating residue = TYRA71 into TRP
+Mutating residue = LYSA73 into VAL
+Mutating residue = PHEA77 into TRP
+Mutating residue = LEUA97 into VAL
+Mutating residue = LYSA102 into ILE
+Mutating residue = ALAA107 into LEU
+Mutating residue = H1SA125 into PHE
+Mutating residue = ASPA128 into ALA
+Mutating residue = THRA12 into LYS
+Mutating residue = ALAA28 into SER
+Mutating residue = THRA50 into LYS
+Mutating residue = H2SA54 into SER
+Mutating residue = THRA56 into LYS
+Mutating residue = GLYA59 into ASP
+Mutating residue = PHEA66 into SER
+Mutating residue = VALA75 into LYS
+Mutating residue = GLNA84 into LYS
+Mutating residue = VALA96 into GLU
+Mutating residue = LEUA104 into LYS
+Mutating residue = ILEA106 into LYS
+Mutating residue = LYSA117 into GLU
+Mutating residue = ASPA119 into GLN
+Mutating residue = GLUA130 into ARG
+Your file run OK
+End time of FoldX: Mon Oct 27 18:29:41 2025
+Total time spend: 366.32 seconds.
+validated file "2lwy_Repair_1.pdb" => successfully finished
+Cleaning BuildModel...DONE
+
+STDERR:
+
+---------------------------------------------------
+
+--- FOLDX Log for sequence SGKAFVAGTEVLTAK... ---
+STDOUT:
+   ********************************************
+   ***                                      ***
+   ***             FoldX 4 (c)              ***
+   ***                                      ***
+   ***     code by the FoldX Consortium     ***
+   ***                                      ***
+   ***     Jesper Borg, Frederic Rousseau   ***
+   ***    Joost Schymkowitz, Luis Serrano   ***
+   ***    Peter Vanhee, Erik Verschueren    ***
+   ***     Lies Baeten, Javier Delgado      ***
+   ***       and Francois Stricher          ***
+   *** and any other of the 9! permutations ***
+   ***   based on an original concept by    ***
+   ***   Raphael Guerois and Luis Serrano   ***
+   ********************************************
+
+1 models read: 2lwy_Repair.pdb
+Output: ./2lwy_Repair.log
+
+BackHbond       =               -79.47
+SideHbond       =               -29.74
+Energy_VdW      =               -150.17
+Electro         =               -2.93
+Energy_SolvP    =               194.22
+Energy_SolvH    =               -207.56
+Energy_vdwclash =               1.99
+energy_torsion  =               1.54
+backbone_vdwclash=              44.41
+Entropy_sidec   =               74.91
+Entropy_mainc   =               206.21
+water bonds     =               0.00
+helix dipole    =               0.00
+loop_entropy    =               0.00
+cis_bond        =               0.00
+disulfide       =               0.00
+kn electrostatic=               0.00
+partial covalent interactions = 0.00
+Energy_Ionisation =             0.72
+Entropy Complex =               0.00
+-----------------------------------------------------------
+Total          = 				  9.72
+
+Starting BuildModel
+Reading MA-2G,MA7E,IA8V,TA12K,KA21Q,IA27V,AA28S,NA30D,TA44V,VA46Q,RA47M,TA50D,HA54L,TA56R,GA59D,FA66P,YA71F,KA73P,VA75R,FA77W,QA84K,KA88E,DA91H,VA96M,LA97A,KA102I,LA104E,IA106K,VA111T,KA117E,DA119E,HA125F,DA128E,NA129L,EA130G;
+Residue to Mutate META-2 has residue index 1
+Residue to Mutate META7 has residue index 10
+Residue to Mutate ILEA8 has residue index 11
+Residue to Mutate THRA12 has residue index 15
+Residue to Mutate LYSA21 has residue index 24
+Residue to Mutate ILEA27 has residue index 30
+Residue to Mutate ALAA28 has residue index 31
+Residue to Mutate ASNA30 has residue index 33
+Residue to Mutate THRA44 has residue index 47
+Residue to Mutate VALA46 has residue index 49
+Residue to Mutate ARGA47 has residue index 50
+Residue to Mutate THRA50 has residue index 53
+Residue to Mutate HISA54 has residue index 57
+Residue to Mutate THRA56 has residue index 59
+Residue to Mutate GLYA59 has residue index 62
+Residue to Mutate PHEA66 has residue index 69
+Residue to Mutate TYRA71 has residue index 74
+Residue to Mutate LYSA73 has residue index 76
+Residue to Mutate VALA75 has residue index 78
+Residue to Mutate PHEA77 has residue index 80
+Residue to Mutate GLNA84 has residue index 87
+Residue to Mutate LYSA88 has residue index 91
+Residue to Mutate ASPA91 has residue index 94
+Residue to Mutate VALA96 has residue index 99
+Residue to Mutate LEUA97 has residue index 100
+Residue to Mutate LYSA102 has residue index 105
+Residue to Mutate LEUA104 has residue index 107
+Residue to Mutate ILEA106 has residue index 109
+Residue to Mutate VALA111 has residue index 114
+Residue to Mutate LYSA117 has residue index 120
+Residue to Mutate ASPA119 has residue index 122
+Residue to Mutate HISA125 has residue index 128
+Residue to Mutate ASPA128 has residue index 131
+Residue to Mutate ASNA129 has residue index 132
+Residue to Mutate GLUA130 has residue index 133
+Mutating residue = META-2 into GLY
+Mutating residue = ILEA8 into VAL
+Mutating residue = ILEA27 into VAL
+Mutating residue = THRA44 into VAL
+Mutating residue = ARGA47 into MET
+Mutating residue = H2SA54 into LEU
+Mutating residue = PHEA66 into PRO
+Mutating residue = TYRA71 into PHE
+Mutating residue = LYSA73 into PRO
+Mutating residue = PHEA77 into TRP
+Mutating residue = ASPA91 into HIS
+Mutating residue = VALA96 into MET
+Mutating residue = LEUA97 into ALA
+Mutating residue = LYSA102 into ILE
+Mutating residue = H1SA125 into PHE
+Mutating residue = ASNA129 into LEU
+Mutating residue = GLUA130 into GLY
+Mutating residue = META7 into GLU
+Mutating residue = THRA12 into LYS
+Mutating residue = LYSA21 into GLN
+Mutating residue = ALAA28 into SER
+Mutating residue = ASNA30 into ASP
+Mutating residue = VALA46 into GLN
+Mutating residue = THRA50 into ASP
+Mutating residue = THRA56 into ARG
+Mutating residue = GLYA59 into ASP
+Mutating residue = VALA75 into ARG
+Mutating residue = GLNA84 into LYS
+Mutating residue = LYSA88 into GLU
+Mutating residue = LEUA104 into GLU
+Mutating residue = ILEA106 into LYS
+Mutating residue = VALA111 into THR
+Mutating residue = LYSA117 into GLU
+Mutating residue = ASPA119 into GLU
+Mutating residue = ASPA128 into GLU
+Your file run OK
+End time of FoldX: Mon Oct 27 18:29:47 2025
+Total time spend: 371.90 seconds.
+validated file "2lwy_Repair_1.pdb" => successfully finished
+Cleaning BuildModel...DONE
+
+STDERR:
+
+---------------------------------------------------
+
+--- FOLDX Log for sequence SGKAFAAGTKILTAK... ---
+STDOUT:
+   ********************************************
+   ***                                      ***
+   ***             FoldX 4 (c)              ***
+   ***                                      ***
+   ***     code by the FoldX Consortium     ***
+   ***                                      ***
+   ***     Jesper Borg, Frederic Rousseau   ***
+   ***    Joost Schymkowitz, Luis Serrano   ***
+   ***    Peter Vanhee, Erik Verschueren    ***
+   ***     Lies Baeten, Javier Delgado      ***
+   ***       and Francois Stricher          ***
+   *** and any other of the 9! permutations ***
+   ***   based on an original concept by    ***
+   ***   Raphael Guerois and Luis Serrano   ***
+   ********************************************
+
+1 models read: 2lwy_Repair.pdb
+Output: ./2lwy_Repair.log
+
+BackHbond       =               -79.47
+SideHbond       =               -29.74
+Energy_VdW      =               -150.17
+Electro         =               -2.93
+Energy_SolvP    =               194.22
+Energy_SolvH    =               -207.56
+Energy_vdwclash =               1.99
+energy_torsion  =               1.54
+backbone_vdwclash=              44.41
+Entropy_sidec   =               74.91
+Entropy_mainc   =               206.21
+water bonds     =               0.00
+helix dipole    =               0.00
+loop_entropy    =               0.00
+cis_bond        =               0.00
+disulfide       =               0.00
+kn electrostatic=               0.00
+partial covalent interactions = 0.00
+Energy_Ionisation =             0.72
+Entropy Complex =               0.00
+-----------------------------------------------------------
+Total          = 				  9.72
+
+Starting BuildModel
+Reading MA-2G,VA3A,MA7K,TA12K,IA27L,NA30D,RA47G,TA50D,HA54S,TA56K,GA59D,FA66P,YA71F,KA73N,VA75K,FA77W,QA84A,VA85K,KA88R,VA96W,KA102M,LA104N,IA106K,AA107L,KA117V,DA119E,HA125N,DA128E,NA129L,EA130G;
+Residue to Mutate META-2 has residue index 1
+Residue to Mutate VALA3 has residue index 6
+Residue to Mutate META7 has residue index 10
+Residue to Mutate THRA12 has residue index 15
+Residue to Mutate ILEA27 has residue index 30
+Residue to Mutate ASNA30 has residue index 33
+Residue to Mutate ARGA47 has residue index 50
+Residue to Mutate THRA50 has residue index 53
+Residue to Mutate HISA54 has residue index 57
+Residue to Mutate THRA56 has residue index 59
+Residue to Mutate GLYA59 has residue index 62
+Residue to Mutate PHEA66 has residue index 69
+Residue to Mutate TYRA71 has residue index 74
+Residue to Mutate LYSA73 has residue index 76
+Residue to Mutate VALA75 has residue index 78
+Residue to Mutate PHEA77 has residue index 80
+Residue to Mutate GLNA84 has residue index 87
+Residue to Mutate VALA85 has residue index 88
+Residue to Mutate LYSA88 has residue index 91
+Residue to Mutate VALA96 has residue index 99
+Residue to Mutate LYSA102 has residue index 105
+Residue to Mutate LEUA104 has residue index 107
+Residue to Mutate ILEA106 has residue index 109
+Residue to Mutate ALAA107 has residue index 110
+Residue to Mutate LYSA117 has residue index 120
+Residue to Mutate ASPA119 has residue index 122
+Residue to Mutate HISA125 has residue index 128
+Residue to Mutate ASPA128 has residue index 131
+Residue to Mutate ASNA129 has residue index 132
+Residue to Mutate GLUA130 has residue index 133
+Mutating residue = META-2 into GLY
+Mutating residue = VALA3 into ALA
+Mutating residue = ILEA27 into LEU
+Mutating residue = ARGA47 into GLY
+Mutating residue = PHEA66 into PRO
+Mutating residue = TYRA71 into PHE
+Mutating residue = PHEA77 into TRP
+Mutating residue = GLNA84 into ALA
+Mutating residue = VALA96 into TRP
+Mutating residue = LYSA102 into MET
+Mutating residue = ALAA107 into LEU
+Mutating residue = LYSA117 into VAL
+Mutating residue = ASNA129 into LEU
+Mutating residue = GLUA130 into GLY
+Mutating residue = META7 into LYS
+Mutating residue = THRA12 into LYS
+Mutating residue = ASNA30 into ASP
+Mutating residue = THRA50 into ASP
+Mutating residue = H2SA54 into SER
+Mutating residue = THRA56 into LYS
+Mutating residue = GLYA59 into ASP
+Mutating residue = LYSA73 into ASN
+Mutating residue = VALA75 into LYS
+Mutating residue = VALA85 into LYS
+Mutating residue = LYSA88 into ARG
+Mutating residue = LEUA104 into ASN
+Mutating residue = ILEA106 into LYS
+Mutating residue = ASPA119 into GLU
+Mutating residue = H1SA125 into ASN
+Mutating residue = ASPA128 into GLU
+Your file run OK
+End time of FoldX: Mon Oct 27 18:30:17 2025
+Total time spend: 401.22 seconds.
+validated file "2lwy_Repair_1.pdb" => successfully finished
+Cleaning BuildModel...DONE
+
+STDERR:
+
+---------------------------------------------------

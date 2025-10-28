@@ -13,8 +13,8 @@ import torch
 from tqdm import tqdm
 from esm.models.esm3 import ESM3
 from esm.sdk.api import ESMProtein, GenerationConfig
-from .guided_generation import ESM3GuidedDecoding, GuidedDecodingScoringFunction
-from .scoring_utils import FoldXScorer, parse_pdb_chain_sequence_with_mapping, foldx_repair_pdb, plot_ddg_history
+from guided_generation import ESM3GuidedDecoding, GuidedDecodingScoringFunction
+from scoring_utils import FoldXScorer, parse_pdb_chain_sequence_with_mapping, foldx_repair_pdb, plot_ddg_history
 from multiprocessing import Pool, cpu_count, Manager
 from functools import partial
 import matplotlib.pyplot as plt
@@ -38,8 +38,8 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 _base_path = os.path.expandvars("$SCRATCH/esm3-gen/foldx")
 FOLDX_WORKDIR = os.path.expandvars(os.environ.get("FOLDX_WORKDIR", _base_path))
 FOLDX_EXEC    = os.path.expandvars(os.environ.get("FOLDX_EXEC", os.path.join(_base_path, "foldx_20251231")))
-#FOLDX_EXEC     = "/pscratch/sd/a/ananda/ESM3-Guided-Generation-Based-Protein-Engineering/foldx/foldx_20251231"
-#FOLDX_WORKDIR  = "/pscratch/sd/a/ananda/ESM3-Guided-Generation-Based-Protein-Engineering/foldx"
+# FOLDX_EXEC     = "/pscratch/sd/a/ananda/ESM3-Guided-Generation-Based-Protein-Engineering/foldx/foldx_20251231"
+# FOLDX_WORKDIR  = "/pscratch/sd/a/ananda/ESM3-Guided-Generation-Based-Protein-Engineering/foldx"
 
 # --- Protein and Masking Settings to test for individual protein without batch job ---
 

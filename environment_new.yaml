@@ -1,9 +1,8 @@
-# name: /global/common/software/nintern/ananda/proteinenv_new
+name: /pscratch/sd/a/ananda/conda_envs/proteinenv_new
 channels:
   - pytorch
   - nvidia
   - conda-forge
-  - defaults
 dependencies:
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=3_kmp_llvm
@@ -297,4 +296,4 @@ dependencies:
       - ultralytics-thop==2.0.14
       - widgetsnbextension==4.0.14
       - zstd==1.5.7.2
-# prefix: /global/common/software/nintern/ananda/proteinenv_new
+prefix: /pscratch/sd/a/ananda/conda_envs/proteinenv_new
