@@ -4,6 +4,9 @@
 # Ignore rotabase.txt anywhere
 **/rotabase.txt
 
+# Ignore Boltz cache directories anywhere
+**/boltz_cache/
+
 # Ignore FoldX cache directories anywhere
 **/foldx_cache/
 
@@ -23,4 +26,6 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Log files (optional - remove if you want to track logs)
-# logs/
+logs/
+
+.vscode/

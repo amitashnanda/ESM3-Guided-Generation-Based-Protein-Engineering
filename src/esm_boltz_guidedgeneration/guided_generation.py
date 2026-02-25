@@ -4,6 +4,7 @@ import os
 import attr
 import torch
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
 from typing import Optional, Tuple, Dict
 
@@ -48,8 +49,12 @@ class ESM3GuidedDecoding:
             self.tokenizers = client.tokenizers
             self._is_data_parallel = False
         elif isinstance(client, ESM3ForgeInferenceClient):
-            self.tokenizers = get_esm3_model_tokenizers(client.model)
+            # All ESM3 models (small/medium/large) share the same tokenizers.
+            # get_esm3_model_tokenizers only recognizes the open-small name,
+            # so we call it with the default (no argument) for any Forge model.
+            self.tokenizers = get_esm3_model_tokenizers()
             self._is_data_parallel = False
+            self._is_forge = True
         else:
             raise ValueError(
                 "client must be an instance of ESM3, DataParallel(ESM3), or ESM3ForgeInferenceClient"
@@ -57,6 +62,9 @@ class ESM3GuidedDecoding:
 
         self.client = client
         self.scoring_function = scoring_function
+        # Set _is_forge if not already set (only True for ESM3ForgeInferenceClient)
+        if not hasattr(self, '_is_forge'):
+            self._is_forge = False
 
     @property
     def _model(self):
@@ -73,7 +81,8 @@ class ESM3GuidedDecoding:
         denoised_prediction_temperature: float = 0.0,
         track: str = "sequence",
         verbose: bool = True,
-        log_file_path: Optional[str] = None
+        log_file_path: Optional[str] = None,
+        # num_boltz_workers: int = 1
     ) -> Tuple[ESMProtein, Dict]:
         print(f"\n[START] Initial input ESMProtein:\n  sequence = {protein.sequence[:100]}...\n")
         protein_tensor = self._model.encode(protein)
@@ -106,7 +115,26 @@ class ESM3GuidedDecoding:
             print(f"\n[STEP {step + 1}/{num_decoding_steps}] Unmasking {num_to_unmask} of {current_masked_positions} positions...")
 
             candidate_gen_start_time = time.time()
-            candidate_tensors = [self.randomly_unmask_positions(protein_tensor, num_to_unmask, track=track) for _ in range(num_samples_per_step)]
+            
+            # ================================================================
+            # FORGE API: Parallelize candidate generation using ThreadPoolExecutor
+            # Each forward_and_sample call is an independent HTTP request, so
+            # running them concurrently gives ~Nx speedup with N threads.
+            # LOCAL MODEL: Keep sequential since DataParallel already uses all
+            # GPUs within each forward pass.
+            # ================================================================
+            if self._is_forge:
+                # --- PARALLEL candidate generation (Forge API) ---
+                print(f"[INFO] Generating {num_samples_per_step} candidates in parallel (Forge API)...")
+                with ThreadPoolExecutor(max_workers=num_samples_per_step) as executor:
+                    unmask_futures = [executor.submit(self.randomly_unmask_positions, protein_tensor, num_to_unmask, 1.0, track) 
+                                      for _ in range(num_samples_per_step)]
+                    candidate_tensors = [f.result() for f in unmask_futures]
+            else:
+                # --- SEQUENTIAL candidate generation (Local model) ---
+                # # OLD SEQUENTIAL CODE (commented out for reference):
+                # candidate_tensors = [self.randomly_unmask_positions(protein_tensor, num_to_unmask, track=track) for _ in range(num_samples_per_step)]
+                candidate_tensors = [self.randomly_unmask_positions(protein_tensor, num_to_unmask, track=track) for _ in range(num_samples_per_step)]
             
             if log_file_path:
                 with open(log_file_path, 'a') as f:
@@ -116,7 +144,18 @@ class ESM3GuidedDecoding:
                         f.write(f"[Candidate {i+1}] Partial Sequence: {partial_protein.sequence}\n")
 
             # Create the denoised proteins
-            raw_denoised_proteins = [self.predict_denoised(tensor, temperature=denoised_prediction_temperature) for tensor in candidate_tensors]
+            if self._is_forge:
+                # --- PARALLEL denoised prediction (Forge API) ---
+                print(f"[INFO] Denoising {len(candidate_tensors)} candidates in parallel (Forge API)...")
+                with ThreadPoolExecutor(max_workers=len(candidate_tensors)) as executor:
+                    denoise_futures = [executor.submit(self.predict_denoised, tensor, denoised_prediction_temperature) 
+                                       for tensor in candidate_tensors]
+                    raw_denoised_proteins = [f.result() for f in denoise_futures]
+            else:
+                # --- SEQUENTIAL denoised prediction (Local model) ---
+                # # OLD SEQUENTIAL CODE (commented out for reference):
+                # raw_denoised_proteins = [self.predict_denoised(tensor, temperature=denoised_prediction_temperature) for tensor in candidate_tensors]
+                raw_denoised_proteins = [self.predict_denoised(tensor, temperature=denoised_prediction_temperature) for tensor in candidate_tensors]
 
             denoised_proteins = []
             for protein_item in raw_denoised_proteins:
@@ -136,17 +175,82 @@ class ESM3GuidedDecoding:
             torch.cuda.empty_cache()
             
             print(f"[INFO] Generated {len(denoised_proteins)} candidates for scoring.")
-            print(f"[INFO] Scoring candidates sequentially (Boltz uses GPU)...")
             
             scoring_start_time = time.time()
 
-            # Score candidates sequentially to allow Boltz to use GPU efficiently
-            scores = []
-            for idx, protein_item in enumerate(denoised_proteins):
-                print(f"  Scoring candidate {idx+1}/{len(denoised_proteins)}...")
-                score = self.scoring_function(protein_item, step=step + 1, log_file_path=log_file_path)
-                scores.append(score)
+            # ================================================================
+            # BATCHED SCORING: Score all candidates in ONE Boltz subprocess call
+            # This loads the Boltz model once per step instead of once per candidate
+            # (~3x faster than per-candidate scoring)
+            # ================================================================
+            print(f"[INFO] Scoring all {len(denoised_proteins)} candidates in one batched Boltz call...")
             
+            # Use score_batch if available (BoltzScorer), otherwise fall back to individual
+            if hasattr(self.scoring_function, 'score_batch'):
+                batch_results = self.scoring_function.score_batch(
+                    proteins=denoised_proteins,
+                    step=step + 1,
+                    log_file_path=log_file_path,
+                    # num_devices auto-detected: uses all GPUs on node
+                )
+                scores = [r[0] for r in batch_results]
+                affinity_details = [r[1] for r in batch_results]
+                for idx, (score, _) in enumerate(batch_results):
+                    if score == float('-inf'):
+                        print(f"  Scored candidate {idx+1}/{len(denoised_proteins)}: -inf")
+                    else:
+                        print(f"  Scored candidate {idx+1}/{len(denoised_proteins)}: {score:.4f}")
+            else:
+                # Fallback: score individually if scoring function doesn't support batching
+                print(f"[INFO] Scoring function does not support batching, falling back to sequential...")
+                scores = []
+                affinity_details = []
+                for idx, protein_item in enumerate(denoised_proteins):
+                    print(f"  Scoring candidate {idx+1}/{len(denoised_proteins)}...")
+                    score, details = self.scoring_function(protein_item, step=step + 1, log_file_path=log_file_path)
+                    scores.append(score)
+                    affinity_details.append(details)
+
+            # ================================================================
+            # OLD PER-CANDIDATE SCORING (COMMENTED OUT)
+            # This spawned a separate subprocess per candidate, reloading the
+            # Boltz model each time. Replaced by batched scoring above.
+            # ================================================================
+            # # Score candidates - parallel or sequential based on num_boltz_workers
+            # # Detect available GPUs for round-robin assignment
+            # num_gpus = torch.cuda.device_count() if torch.cuda.is_available() else 1
+            # 
+            # if num_boltz_workers > 1:
+            #     print(f"[INFO] Scoring candidates in parallel ({num_boltz_workers} workers across {num_gpus} GPUs)...")
+            #     scores = [None] * len(denoised_proteins)
+            #     affinity_details = [None] * len(denoised_proteins)
+            #     
+            #     def score_single(idx_protein_gpu):
+            #         idx, protein_item, assigned_gpu = idx_protein_gpu
+            #         return idx, self.scoring_function(protein_item, step=step + 1, log_file_path=log_file_path, gpu_id=assigned_gpu)
+            #     
+            #     with ThreadPoolExecutor(max_workers=num_boltz_workers) as executor:
+            #         # Round-robin GPU assignment: candidate 0 → GPU 0, candidate 1 → GPU 1, etc.
+            #         futures = {executor.submit(score_single, (i, p, i % num_gpus)): i 
+            #                    for i, p in enumerate(denoised_proteins)}
+            #         for future in as_completed(futures):
+            #             idx, result = future.result()
+            #             score, details = result
+            #             scores[idx] = score
+            #             affinity_details[idx] = details
+            #             print(f"  Scored candidate {idx+1}/{len(denoised_proteins)} (GPU {idx % num_gpus}): {score:.4f}")
+            # else:
+            #     # Sequential scoring (original behavior)
+            #     print(f"[INFO] Scoring candidates sequentially (Boltz uses GPU)...")
+            #     scores = []
+            #     affinity_details = []
+            #     for idx, protein_item in enumerate(denoised_proteins):
+            #         print(f"  Scoring candidate {idx+1}/{len(denoised_proteins)}...")
+            #         score, details = self.scoring_function(protein_item, step=step + 1, log_file_path=log_file_path)
+            #         scores.append(score)
+            #         affinity_details.append(details)
+            # ================================================================
+
             scoring_duration = time.time() - scoring_start_time
             print(f"[INFO] Step scoring finished in {scoring_duration:.2f} seconds.")
 
@@ -161,10 +265,26 @@ class ESM3GuidedDecoding:
                     f.write(f"\n--- Step {step + 1} Denoised Results ---\n")
                     for i, (p, score) in enumerate(zip(denoised_proteins, scores)):
                         ptm_str = f"pTM: {p.ptm.item():.4f}" if hasattr(p, 'ptm') and p.ptm is not None else "pTM: N/A"
+                        details = affinity_details[i] if i < len(affinity_details) else None
+                        
                         f.write(f"\n[Candidate {i+1}]\n")
                         f.write(f"  Denoised Sequence: {p.sequence}\n")
                         f.write(f"  {ptm_str}\n")
-                        f.write(f"  Score: {score:.4f}\n")
+                        
+                        # Print raw Boltz value and negated score side-by-side
+                        if details is not None:
+                            raw_val = details.get('affinity_pred_value', 'N/A')
+                            f.write(f"  Score: {score:.4f} | Raw Boltz affinity_pred_value (log10 IC50): {raw_val}\n")
+                            f.write(f"  --- Boltz Affinity Details ---\n")
+                            f.write(f"    affinity_pred_value (ensemble):  {details.get('affinity_pred_value', 'N/A')}\n")
+                            f.write(f"    affinity_probability_binary:     {details.get('affinity_probability_binary', 'N/A')}\n")
+                            f.write(f"    affinity_pred_value1 (model 1):  {details.get('affinity_pred_value1', 'N/A')}\n")
+                            f.write(f"    affinity_probability_binary1:    {details.get('affinity_probability_binary1', 'N/A')}\n")
+                            f.write(f"    affinity_pred_value2 (model 2):  {details.get('affinity_pred_value2', 'N/A')}\n")
+                            f.write(f"    affinity_probability_binary2:    {details.get('affinity_probability_binary2', 'N/A')}\n")
+                        else:
+                            f.write(f"  Score: {score:.4f} | Boltz prediction failed\n")
+                        
                         if score > best_score_in_step:
                             best_score_in_step = score
                             best_tensor_in_step = candidate_tensors[i]
@@ -183,14 +303,22 @@ class ESM3GuidedDecoding:
                 best_overall_sequence = best_sequence_in_step 
                 best_overall_step = step + 1                 
             
-            protein_tensor = best_tensor_in_step
+            # If all candidates scored -inf (e.g., Boltz failed), keep the
+            # previous step's tensor so we can continue to the next step
+            if best_tensor_in_step is None:
+                print(f"[WARNING] All candidates in Step {step + 1} scored -inf. "
+                      f"Retaining previous step's best protein for next step.")
+                # protein_tensor stays unchanged from the previous iteration
+            else:
+                protein_tensor = best_tensor_in_step
             step_total_duration = time.time() - step_total_start_time
 
             if log_file_path:
                 with open(log_file_path, 'a') as f:
                     f.write("\n" + "-"*25 + f" Step {step + 1} Summary " + "-"*25 + "\n")
                     f.write(f"Best Candidate in Step:\n{best_sequence_in_step}\n")
-                    f.write(f"Best Score in Step: {best_score_in_step:.4f}\n")
+                    f.write(f"Best Score in Step (=-affinity_pred_value): {best_score_in_step:.4f}\n")
+                    f.write(f"Raw Boltz affinity_pred_value (log10 IC50): {-best_score_in_step:.4f}\n")
                     f.write(f"This sequence will be used as the template for Step {step + 2}.\n")
                     f.write("-" * 65 + "\n")
 
@@ -269,9 +397,9 @@ class ESM3GuidedDecoding:
         )
         assert not isinstance(denoised_protein_tensor_output, ESMProteinError)
         denoised_protein_tensor = denoised_protein_tensor_output.protein_tensor
-        output_track_tensor = getattr(denoised_protein_tensor, track)
+        output_track_tensor = getattr(denoised_protein_tensor, track).long()
         assert output_track_tensor is not None
-        track_tensor[mask_indices] = output_track_tensor[mask_indices]
+        track_tensor[mask_indices] = output_track_tensor[mask_indices].long()
         setattr(protein_tensor, track, track_tensor)
 
         return protein_tensor
@@ -305,3 +433,6 @@ class ESM3GuidedDecoding:
         else:
             print("Warning: structure already exists in protein_tensor")
         return protein_tensor
+
+
+
